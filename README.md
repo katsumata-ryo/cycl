@@ -1,4 +1,8 @@
-# tutyo
+# tutyo: Under Construcsion
+
+作成開始: 2015-12-30
+
+
 
 ## やれること
 * ログイン認証
