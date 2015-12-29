@@ -25,8 +25,12 @@
 
 ### user
 
+※devise gemの内容
+
 name:string
 password:string
+
+
 
 ### record
 
