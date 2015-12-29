@@ -36,6 +36,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 # Use haml
+gem 'haml-rails'
 gem 'erb2haml'
 
 group :development, :test do
