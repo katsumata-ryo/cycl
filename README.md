@@ -15,8 +15,36 @@
         * 消費予算額に対しての消費金額の一覧がある
         * 何らかのグラフが出したい。
 
+## データベース
+
+### category
+
+* name:string
+* monthly:boolean
+* estimate:integer
+
+### user
+
+name:string
+password:string
+
+### record
+
+* payment:integer
+* date:date
+* category:string
+* card:boolean
+* memo:text
+
+### annual_salary
+
+* year:integer
+* salary:integer
+
+###
+
+
 ## メモ
 
 * ruby 2.3.0
 * rails 4.2.5
-
