@@ -23,3 +23,28 @@
   background-size: cover;
   background-color: #fff;
 }
+
+table.account-table{
+  width: 600px;
+  margin: 0 auto;
+}
+
+.account-table tr{
+  width: 300px;
+  border: 0px;
+  margin: 0 auto;
+}
+
+.account-table td{
+  width: 300px;
+  padding: 10px;
+  text-align: left;
+}
+
+.account-table th{
+  text-align: right;
+}
+
+.space{
+  margin-bottom: 40px;
+}
