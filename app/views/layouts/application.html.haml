@@ -36,8 +36,12 @@
                 = link_to content_tag(:i, ' LOGIN', class: 'fa fa-chevron-right'), new_user_session_path
     %div.jumbotron
       %div.container
-        = yield
+        %h1
+          TUCHO
+        %p
+          This is Managed Passbook.
     %div.container
       %p.notice= notice
       %p.alert= alert
+      = yield
 
