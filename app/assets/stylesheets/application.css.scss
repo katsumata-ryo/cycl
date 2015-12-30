@@ -16,3 +16,10 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.jumbotron{
+  background-image: url("/img/bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-color: #fff;
+}
