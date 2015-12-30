@@ -8,23 +8,29 @@
     = csrf_meta_tags
   %body
     %header
-      %nav
-        / user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド
-        - if user_signed_in?
-          / current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド
-          /
-            *_path はUserモデルを作成したときに、
-            deviseにより自動で作成されてますので、rake routesで確認できます
-          Logged in as
-          = succeed "." do
-            %strong= current_user.email
-          = link_to 'プロフィール変更', edit_user_registration_path
-          |
-          \#{link_to "ログアウト", destroy_user_session_path, method: :delete}
-        - else
-          = link_to "サインイン", new_user_registration_path
-          |
-          \#{link_to "ログイン", new_user_session_path}
+      %nav.navbar.navbar-inverse.navbar-static-top
+        %div.container-fluid
+          %ul.nav.navbar-nav
+            %li
+              = link_to "HOME", home_index_path
+            / user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド
+            - if user_signed_in?
+              / current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド
+              /
+                *_path はUserモデルを作成したときに、
+                deviseにより自動で作成されてますので、rake routesで確認できます
+                Logged in as
+                = succeed "." do
+                  %strong= current_user.email
+                = link_to 'プロフィール変更', edit_user_registration_path
+                |
+              %li
+                = link_to "LOGOUT", destroy_user_session_path, method: :delete
+            - else
+              %li
+                = link_to "SIGNUP", new_user_registration_path
+              %li
+                = link_to "LOGIN", new_user_session_path
     %p.notice= notice
     %p.alert= alert
     = yield
