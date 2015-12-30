@@ -1,0 +1,18 @@
+.text-center
+  %h2 ログイン
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      メールアドレス
+      %br/
+      = f.email_field :email, autofocus: true
+    .field
+      パスワード
+      %br/
+      = f.password_field :password, autocomplete: "off"
+    - if devise_mapping.rememberable?
+      .field
+        = f.check_box :remember_me
+        パスワードを記憶する
+    .actions
+      = f.submit "ログイン"
+  = render "devise/shared/links"

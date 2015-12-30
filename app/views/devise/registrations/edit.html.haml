@@ -1,0 +1,32 @@
+.text-center
+  %h2
+    アカウント情報の変更
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = devise_error_messages!
+    .field
+      メールアドレス
+      %br/
+      = f.email_field :email, autofocus: true
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    .field
+      パスワード
+      %i (もし変更の必要がない場合は、空にして下さい。)
+      %br/
+      = f.password_field :password, autocomplete: "off"
+    .field
+      確認用パスワード
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "off"
+    .field
+      新しいパスワード
+      %i (変更の確認に必要です)
+      %br/
+      = f.password_field :current_password, autocomplete: "off"
+    .actions
+      = f.submit "Update"
+  %h3 アカウントの停止
+  %p
+    残念ですけどまた逢いましょう #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+  = link_to "Back", :back

@@ -1,0 +1,28 @@
+.text-center
+  %h2 ユーザ登録
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .field
+      %p
+        %strong
+          メールアドレス
+        %br/
+        = f.email_field :email, autofocus: true
+    .field
+      %p
+        %strong
+          パスワード
+        - if @minimum_password_length
+          (#{@minimum_password_length} 文字以上入力して下さい)
+        %br/
+        = f.password_field :password, autocomplete: "off"
+    .field
+      %p
+        %strong
+          パスワード(確認用)
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off"
+      .actions
+        = f.submit "登録"
+  %p
+    = render "devise/shared/links"

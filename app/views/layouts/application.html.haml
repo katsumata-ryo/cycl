@@ -21,14 +21,13 @@
               /
                 *_path はUserモデルを作成したときに、
                 deviseにより自動で作成されてますので、rake routesで確認できます
-                Logged in as
-                = succeed "." do
-                  %strong= current_user.email
-                = link_to 'プロフィール変更', edit_user_registration_path
-                |
+              /= succeed "." do
               %li
-                %span.fa.fa-group
-                  = link_to "LOGOUT", destroy_user_session_path, method: :delete
+                = link_to content_tag(:i, " #{current_user.email}", class: 'fa fa-envelope'), "#"
+              %li
+                = link_to content_tag(:i, ' プロフィール変更', class: 'fa fa-user'), edit_user_registration_path
+              %li
+                = link_to content_tag(:i, ' LOGOUT', class: 'fa fa-chevron-right'), destroy_user_session_path, method: :delete
             - else
               %li
                 = link_to content_tag(:i, ' SIGNUP', class: 'fa fa-chevron-right'), new_user_registration_path
@@ -36,9 +35,9 @@
                 = link_to content_tag(:i, ' LOGIN', class: 'fa fa-chevron-right'), new_user_session_path
     %div.jumbotron
       %div.container
-        %h1
+        %h1.text-center
           TUCHO
-        %p
+        %p.text-center
           This is Managed Passbook.
     %div.container
       %p.notice= notice
