@@ -9,11 +9,12 @@
     = csrf_meta_tags
   %body
     %header
-      %nav.navbar.navbar-inverse.navbar-static-top
-        %div.container-fluid
+      %nav.navbar-inverse.navbar-static-top
+        %div.container
           %ul.nav.navbar-nav
             %li
               = link_to content_tag(:i, ' HOME', class: 'fa fa-home'), root_path
+          %ul.nav.navbar-nav.navbar-right
             / user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド
             - if user_signed_in?
               / current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド
@@ -33,6 +34,10 @@
                 = link_to content_tag(:i, ' SIGNUP', class: 'fa fa-chevron-right'), new_user_registration_path
               %li
                 = link_to content_tag(:i, ' LOGIN', class: 'fa fa-chevron-right'), new_user_session_path
-    %p.notice= notice
-    %p.alert= alert
-    = yield
+    %div.jumbotron
+      %div.container
+        = yield
+    %div.container
+      %p.notice= notice
+      %p.alert= alert
+
