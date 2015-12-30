@@ -4,6 +4,7 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Tucho
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
@@ -12,7 +13,7 @@
         %div.container-fluid
           %ul.nav.navbar-nav
             %li
-              = link_to "HOME", home_index_path
+              = link_to content_tag(:i, ' HOME', class: 'fa fa-home'), root_path
             / user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド
             - if user_signed_in?
               / current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド
@@ -25,12 +26,13 @@
                 = link_to 'プロフィール変更', edit_user_registration_path
                 |
               %li
-                = link_to "LOGOUT", destroy_user_session_path, method: :delete
+                %span.fa.fa-group
+                  = link_to "LOGOUT", destroy_user_session_path, method: :delete
             - else
               %li
-                = link_to "SIGNUP", new_user_registration_path
+                = link_to content_tag(:i, ' SIGNUP', class: 'fa fa-chevron-right'), new_user_registration_path
               %li
-                = link_to "LOGIN", new_user_session_path
+                = link_to content_tag(:i, ' LOGIN', class: 'fa fa-chevron-right'), new_user_session_path
     %p.notice= notice
     %p.alert= alert
     = yield
