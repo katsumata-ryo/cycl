@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  payment: 1
+  date: 2015-12-31
+  category: MyString
+  card: false
+  memo: MyText
+
+two:
+  payment: 1
+  date: 2015-12-31
+  category: MyString
+  card: false
+  memo: MyText

@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Payment:
+  = @record.payment
+%p
+  %b Date:
+  = @record.date
+%p
+  %b Category:
+  = @record.category
+%p
+  %b Card:
+  = @record.card
+%p
+  %b Memo:
+  = @record.memo
+
+= link_to 'Edit', edit_record_path(@record)
+\|
+= link_to 'Back', records_path
