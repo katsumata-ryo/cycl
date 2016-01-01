@@ -6,20 +6,32 @@
         - @record.errors.full_messages.each do |msg|
           %li= msg
 
+  .small
+    (*) 必須
   .field
-    = f.label :payment
+    %strong
+      金額(*)
+    %br/
     = f.number_field :payment
   .field
-    = f.label :date
+    %strong
+      日時
+    %br/
     = f.date_select :date
   .field
-    = f.label :category
+    %strong
+      カテゴリー(*)
+    %br/
     = f.text_field :category
   .field
-    = f.label :card
+    %strong
+      クレジットカード(*)
+    %br/
     = f.check_box :card
   .field
-    = f.label :memo
+    %strong
+      メモ
+    %br/
     = f.text_area :memo
   .actions
     = f.submit 'Save'
