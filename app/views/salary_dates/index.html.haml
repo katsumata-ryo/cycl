@@ -1,0 +1,13 @@
+%h1 締め日設定
+
+%table
+  %thead
+    %tr
+      %th 締め日
+      %th
+
+  %tbody
+    - @salary_dates.each do |salary_date|
+      %tr
+        %td= display(salary_date.cutoff)
+        %td= link_to '編集', edit_salary_date_path(salary_date)
