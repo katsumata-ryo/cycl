@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   # relation
   has_many :records
   has_many :categories
+  has_many :salaries
+  has_one  :salary_date
 end
