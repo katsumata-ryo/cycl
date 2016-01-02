@@ -1,6 +1,7 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:new, :create, :edit, :update]
+  before_action :set_current_user, only: [:new]
 
   # GET /records
   # GET /records.json
@@ -16,6 +17,7 @@ class RecordsController < ApplicationController
   # GET /records/new
   def new
     @record = Record.new
+    @user_id = @current_user.id
   end
 
   # GET /records/1/edit
@@ -73,6 +75,10 @@ class RecordsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:payment, :date, :category_id, :card, :memo)
+      params.require(:record).permit(:payment, :date, :category_id, :card, :memo, :user_id)
+    end
+
+    def set_current_user
+      @current_user = current_user
     end
 end

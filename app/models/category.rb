@@ -1,6 +1,7 @@
 class Category < ActiveRecord::Base
   # relation
   has_many :records
+  belongs_to :user
 
   # validation
   validates_presence_of :name

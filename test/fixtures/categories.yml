@@ -5,17 +5,20 @@ one:
   name: 食費
   monthly: false
   budget: 10000
+  user_id: 1
 
 two:
   id: 2
   name: 携帯
   monthly: true
   budget: 8000
+  user_id: 1
 
 three:
   id: 3
   name: その他
   monthly: true
   budget: 0
+  user_id: 1
 
 

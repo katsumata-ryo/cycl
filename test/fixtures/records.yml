@@ -6,6 +6,7 @@ one:
   category_id: 1
   card: false
   memo: MyText
+  user_id: 1
 
 two:
   payment: 5000
@@ -13,6 +14,7 @@ two:
   category_id: 2
   card: false
   memo: MyText
+  user_id: 1
 
 three:
   payment: 100000
@@ -20,3 +22,4 @@ three:
   category_id: 3
   card: true
   memo: MyText
+  user_id: 1
