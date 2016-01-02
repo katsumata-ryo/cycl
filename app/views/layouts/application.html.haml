@@ -16,6 +16,10 @@
               = link_to content_tag(:i, ' HOME', class: 'fa fa-home'), root_path
             %li
               = link_to content_tag(:i, ' NEW PAY', class: 'fa fa-yen'), new_record_path
+            %li
+              = link_to content_tag(:i, ' PAID', class: 'fa fa-list-alt'), records_path
+            %li
+              = link_to content_tag(:i, ' CATEGORIES', class: 'fa fa-th-list'), categories_path
           %ul.nav.navbar-nav.navbar-right
             / user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド
             - if user_signed_in?
