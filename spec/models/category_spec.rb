@@ -42,7 +42,7 @@ describe Category do
 
   context "error case" do
     it "can not save invalid name value" do
-      values = [nil, true, false, ""]
+      values = [nil, ""]
       values.each do |value|
         @category.name = value
         expect(@category.save).to be_falsey
@@ -50,7 +50,7 @@ describe Category do
     end
 
     it "can not save invalid monthly value" do
-      values = [nil, 1, "string", ""]
+      values = [nil, ""]
       values.each do |value|
         @category.monthly = value
         expect(@category.save).to be_falsey
@@ -58,7 +58,7 @@ describe Category do
     end
 
     it "can not save invalid budget value" do
-      values = [nil, true, "string", ""]
+      values = [nil, true, "string", "", 1.08, -1]
       values.each do |value|
         @category.budget = value
         expect(@category.save).to be_falsey

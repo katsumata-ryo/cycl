@@ -7,13 +7,18 @@
           %li= msg
 
   .field
-    = f.label :name
+    %strong
+      カテゴリー名
+    %br
     = f.text_field :name
   .field
-    = f.label :monthly
+    %strong
+      毎月かかるものはチェック
     = f.check_box :monthly
   .field
-    = f.label :budget
+    %strong
+      予算袋
+    %br
     = f.number_field :budget
   .actions
-    = f.submit 'Save'
+    = f.submit '保存'

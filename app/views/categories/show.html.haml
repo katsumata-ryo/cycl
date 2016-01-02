@@ -1,15 +1,18 @@
+%h1
+  = "#{@category.name} の情報"
+
 %p#notice= notice
 
 %p
-  %b Name:
+  %b カテゴリー名:
   = @category.name
 %p
-  %b Monthly:
+  %b 毎月:
   = @category.monthly
 %p
-  %b Budget:
+  %b 予算袋:
   = @category.budget
 
-= link_to 'Edit', edit_category_path(@category)
+= link_to '編集', edit_category_path(@category)
 \|
-= link_to 'Back', categories_path
+= link_to '一覧に戻る', categories_path
