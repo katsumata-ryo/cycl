@@ -5,8 +5,8 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  email: ryo@workapart.org
-  encrypted_password: $2a$10$TUd9zd5aUXhJvSWuVjPT5u.9nt8pFvbYVCubeyHEWKp5vTXFzD1Gm #0okmnbvcxzaq1
+  email: ryo@example.com
+  encrypted_password: $2a$10$OgmFDX0wXHLlyAvkoaQjXOox3z26G2J1SSSB7.tfU3tCBf23hZ.Pe #12345678
 # column: value
 #
 # two: {}
