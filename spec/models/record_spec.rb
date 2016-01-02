@@ -3,12 +3,12 @@ require 'rails_helper'
 describe Record do
   describe "test" do
     before do
-      record          = Record.new
-      record.payment  = 0
-      record.date     = Date.today
-      record.category = "eat"
-      record.card     = false
-      record.memo     = "test"
+      record             = Record.new
+      record.payment     = 0
+      record.date        = Date.today
+      record.category_id = 1
+      record.card        = false
+      record.memo        = "test"
       record.save
       @record = Record.first
     end
