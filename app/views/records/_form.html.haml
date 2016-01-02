@@ -22,7 +22,7 @@
     %strong
       カテゴリー(*)
     %br/
-    = f.text_field :category
+    = collection_select(:record, :category_id, @categories, :id, :name)
   .field
     %strong
       クレジットカード(*)

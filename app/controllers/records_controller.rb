@@ -1,5 +1,6 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
+  before_action :set_categories, only: [:new, :create, :edit, :update]
 
   # GET /records
   # GET /records.json
@@ -67,8 +68,11 @@ class RecordsController < ApplicationController
       @record = Record.find(params[:id])
     end
 
+    def set_categories
+      @categories = Category.all
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:payment, :date, :category, :card, :memo)
+      params.require(:record).permit(:payment, :date, :category_id, :card, :memo)
     end
 end
