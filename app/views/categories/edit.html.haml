@@ -1,0 +1,8 @@
+%h1
+  = "#{@category.name} の編集"
+
+= render 'form'
+
+= link_to 'Show', @category
+\|
+= link_to 'Back', categories_path

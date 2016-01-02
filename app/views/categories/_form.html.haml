@@ -1,0 +1,24 @@
+= form_for @category do |f|
+  - if @category.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+      %ul
+        - @category.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    %strong
+      カテゴリー名
+    %br
+    = f.text_field :name
+  .field
+    %strong
+      毎月かかるものはチェック
+    = f.check_box :monthly
+  .field
+    %strong
+      予算袋
+    %br
+    = f.number_field :budget
+  .actions
+    = f.submit '保存'

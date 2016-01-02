@@ -25,7 +25,7 @@
 
 * name:string
 * monthly:boolean
-* estimate:integer
+* budget_bag:integer
 
 ### user
 
