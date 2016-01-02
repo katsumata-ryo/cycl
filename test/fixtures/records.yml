@@ -1,15 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  payment: 1
+  payment: 10000
   date: 2015-12-31
-  category: MyString
+  category_id: 1
   card: false
   memo: MyText
 
 two:
-  payment: 1
+  payment: 5000
   date: 2015-12-31
-  category: MyString
+  category_id: 2
   card: false
+  memo: MyText
+
+three:
+  payment: 100000
+  date: 2016-1-2
+  category_id: 3
+  card: true
   memo: MyText

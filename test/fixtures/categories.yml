@@ -1,11 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: 食費
   monthly: false
-  budget: 1
+  budget: 10000
 
 two:
-  name: MyString
-  monthly: false
-  budget: 1
+  name: 携帯
+  monthly: true
+  budget: 8000
+
+three:
+  name: その他
+  monthly: true
+  budget: 0
+
+
