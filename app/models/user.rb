@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   # relation
   has_many :records
+  has_many :categories
 end

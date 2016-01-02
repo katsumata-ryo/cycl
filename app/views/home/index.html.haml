@@ -1,0 +1,5 @@
+%p
+  - if current_user
+    = "#{current_user.email} is login"
+  - else
+    please login.
