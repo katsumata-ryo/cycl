@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
@@ -51,6 +50,7 @@ gem 'bootstrap3-datetimepicker-rails'
 group :test do
   gem "rspec"
   gem "rspec-rails"
+  gem "rspec_junit_formatter", '0.2.2'
 end
 
 group :development, :test do
