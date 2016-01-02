@@ -1,4 +1,7 @@
 class Category < ActiveRecord::Base
+  # relation
+  has_many :records
+
   # validation
   validates_presence_of :name
   validates_numericality_of :budget
