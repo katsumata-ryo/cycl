@@ -9,10 +9,6 @@ machine:
     version:
       2.3.0
 
-test:
-  override:
-    - bundle exec rspec:
-
 #   # Override /etc/hosts
 #   hosts:
 #     circlehost: 127.0.0.1
