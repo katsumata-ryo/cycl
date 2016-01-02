@@ -1,11 +1,9 @@
 require 'rails_helper'
 
 describe Category do
+  fixtures :categories
   before do
-    category = Category.new
-    category.name    = "食費"
-    category.monthly = true
-    category.budget  = 10000
+    category = categories(:one)
     category.save
     @category = Category.first
   end
