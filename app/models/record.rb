@@ -1,6 +1,7 @@
 class Record < ActiveRecord::Base
   # relation
   belongs_to :category
+  belongs_to :user
 
   # validation
   validates_presence_of :payment, :category_id
