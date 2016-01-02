@@ -13,7 +13,7 @@
         %div.container
           %ul.nav.navbar-nav
             %li
-              = link_to content_tag(:i, ' HOME', class: 'fa fa-home'), root_path
+              = link_to content_tag(:i, ' TUCHO', class: 'fa fa-home'), root_path
             %li
               = link_to content_tag(:i, ' NEW PAY', class: 'fa fa-yen'), new_record_path
             %li
@@ -39,12 +39,15 @@
                 = link_to content_tag(:i, ' SIGNUP', class: 'fa fa-chevron-right'), new_user_registration_path
               %li
                 = link_to content_tag(:i, ' LOGIN', class: 'fa fa-chevron-right'), new_user_session_path
-    %div.jumbotron
-      %div.container
-        %h1.text-center
-          TUCHO
-        %p.text-center
-          This is Managed Passbook.
+    -if request.path_info == '/'
+      %div.jumbotron
+        %div.container
+          %h1.text-center
+            TUCHO
+          %p.text-center
+            This is Managed Passbook.
+    - else
+      %div.header-bar
     %div.container
       %p.notice= notice
       %p.alert= alert
