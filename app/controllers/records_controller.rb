@@ -3,6 +3,9 @@ class RecordsController < ApplicationController
   before_action :set_categories, only: [:new, :create, :edit, :update]
   before_action :set_current_user, only: [:new]
 
+  # devise
+  before_action :authenticate_user!
+
   # GET /records
   # GET /records.json
   def index
