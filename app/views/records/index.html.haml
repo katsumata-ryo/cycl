@@ -1,6 +1,6 @@
 %h1 Listing records
 
-%table
+%table.table.table-condensed
   %thead
     %tr
       %th Payment
@@ -13,7 +13,7 @@
       %th
 
   %tbody
-    - @records.each do |record|
+    - @own_records.each do |record|
       %tr
         %td= record.payment
         %td= record.date

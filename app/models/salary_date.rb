@@ -4,4 +4,5 @@ class SalaryDate < ActiveRecord::Base
 
   # validation
   validates :cutoff, inclusion: { in: [1, 10, 15, 31] }
+  validates :user_id,  uniqueness: true
 end

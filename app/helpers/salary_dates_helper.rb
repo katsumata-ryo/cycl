@@ -10,7 +10,7 @@ module SalaryDatesHelper
     when 31
       "月末"
     else
-      "#{self.to_s}日"
+      "#{cutoff.to_s}日"
     end
   end
 end

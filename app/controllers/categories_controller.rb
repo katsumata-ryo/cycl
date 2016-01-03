@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_own_categories, only: [:index]
 
     # devise
   before_action :authenticate_user!
@@ -7,7 +8,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @own_categories
   end
 
   # GET /categories/1
@@ -68,6 +69,10 @@ class CategoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])
+    end
+
+    def set_own_categories
+      @own_categories = Category.where("user_id = #{current_user.id}")
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

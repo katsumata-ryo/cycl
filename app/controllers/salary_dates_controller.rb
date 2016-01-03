@@ -1,6 +1,9 @@
 class SalaryDatesController < ApplicationController
   before_action :set_salary_date, only: [:show, :edit, :update, :destroy]
 
+  # devise
+  before_action :authenticate_user!
+
   # GET /salary_dates
   # GET /salary_dates.json
   def index
