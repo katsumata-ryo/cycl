@@ -1,56 +1,8 @@
 %h1 集計
-
-.dropdown
-  %button#dropdownMenu2.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-    月を選択
-    %span.caret
-  %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu2"}
-    %li
-      = link_to "今月", summary_path
-    %li.divider{:role => "separator"}
-    - today = Date.today
-    - (-4...5).each do |i|
-      - date = today << -i
-      %li
-        = link_to "#{date.year}/#{date.month}", controller: "summary", action: "show", year: date.year, month: date.month
-
-%h2 全出費
 %table.table.table-condensed
-  %tr
-    %th
-      今月の出費
-    %td
-      ￥
-      = @user_records_this_month.sum(:payment)
-
-%h2
-  残額
-%p
-  ￥
-  = @salary.money - @user_records_this_month.sum(:payment)
-
-%h2 今月のカテゴリー別
-%table.table.table-condensed
-  %tr
-    %th カテゴリー
-    %th 支払
-    %th 予算差引額
-  - @user_records_this_month_for_category.each do |category_id, payment|
+  - @user_records_this_month.each do |category_id, payment|
     %tr
-      %td
+      %th
         = @user_categories.find_by_id(category_id).name
       %td
-        ￥
-        = payment
-      %td
-        ￥
-        = @user_categories.find_by_id(category_id).budget - payment
-
-%h2 クレジットカード
-%table.table.table-condensed
-  %tr
-    %th
-      クレジットカード
-    %td
-      ￥
-      = @card_this_month
+        = "￥ #{payment}"
