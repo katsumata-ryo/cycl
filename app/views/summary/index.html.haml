@@ -20,12 +20,14 @@
     %th
       今月の出費
     %td
-      = "￥ #{@user_records_this_month.sum(:payment)}"
+      ￥
+      = @user_records_this_month.sum(:payment)
 
 %h2
   残額
 %p
-  = "￥ #{@salary.money - @user_records_this_month.sum(:payment)}"
+  ￥
+  = @salary.money - @user_records_this_month.sum(:payment)
 
 %h2 今月のカテゴリー別
 %table.table.table-condensed
@@ -38,8 +40,10 @@
       %td
         = @user_categories.find_by_id(category_id).name
       %td
-        = "￥ #{payment}"
+        ￥
+        = payment
       %td
+        ￥
         = @user_categories.find_by_id(category_id).budget - payment
 
 %h2 クレジットカード
@@ -48,4 +52,5 @@
     %th
       クレジットカード
     %td
-      = "￥ #{@card_this_month}"
+      ￥
+      = @card_this_month

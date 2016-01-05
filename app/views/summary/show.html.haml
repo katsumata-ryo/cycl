@@ -18,16 +18,19 @@
 %h2
   総支出
 %p
+  ￥
   = @month_records.sum(:payment)
 
 %h2
   残額
 %p
-  = "￥ #{@salary.money - @month_records.sum(:payment)}"
+  ￥
+  = @salary.money - @month_records.sum(:payment)
 
 %h2
   クレジットカード
 %p
+  ￥
   = @month_records.where(card: true).sum(:payment)
 %h2
   カテゴリーごと
@@ -42,6 +45,8 @@
       %th
         = @user_categories.find_by_id(category_id).name
       %td
+        ￥
         = @month_records.where(category_id: category_id).sum(:payment)
       %td
+        ￥
         = @user_categories.find_by_id(category_id).budget - @month_records.where(category_id: category_id).sum(:payment)
