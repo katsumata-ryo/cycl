@@ -1,4 +1,5 @@
-%h1 集計
+%h1
+  = "#{params[:year]}年 #{params[:month]}月"
 
 .dropdown
   %button#dropdownMenu2.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
@@ -14,43 +15,38 @@
       %li
         = link_to "#{date.year}/#{date.month}", controller: "summary", action: "show", year: date.year, month: date.month
 
-%h2 全出費
-%table.table.table-condensed
-  %tr
-    %th
-      今月の出費
-    %td
-      ￥
-      = @user_records_this_month.sum(:payment)
+%h2
+  総支出
+%p
+  ￥
+  = @month_records.sum(:payment)
 
 %h2
   残額
 %p
   ￥
-  = @salary.money - @user_records_this_month.sum(:payment)
+  = @salary.money - @month_records.sum(:payment)
 
-%h2 今月のカテゴリー別
+%h2
+  クレジットカード
+%p
+  ￥
+  = @month_records.where(card: true).sum(:payment)
+%h2
+  カテゴリーごと
+
 %table.table.table-condensed
   %tr
     %th カテゴリー
     %th 支払
     %th 予算差引額
-  - @user_records_this_month_for_category.each do |category_id, payment|
+  - @month_records.pluck(:category_id).uniq.each do |category_id|
     %tr
-      %td
+      %th
         = @user_categories.find_by_id(category_id).name
       %td
         ￥
-        = payment
+        = @month_records.where(category_id: category_id).sum(:payment)
       %td
         ￥
-        = @user_categories.find_by_id(category_id).budget - payment
-
-%h2 クレジットカード
-%table.table.table-condensed
-  %tr
-    %th
-      クレジットカード
-    %td
-      ￥
-      = @card_this_month
+        = @user_categories.find_by_id(category_id).budget - @month_records.where(category_id: category_id).sum(:payment)
