@@ -72,7 +72,7 @@ class RecordsController < ApplicationController
     end
 
     def set_own_records
-      @own_records = Record.where("user_id = #{current_user.id}")
+      @own_records = Record.where("user_id = #{current_user.id}").reverse_order
     end
 
     def set_own_categories
