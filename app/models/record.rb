@@ -5,7 +5,7 @@ class Record < ActiveRecord::Base
 
   # validation
   validates_presence_of :payment, :category_id
-  validates_numericality_of :payment, :greater_than_or_equal_to => 0
+  validates_numericality_of :payment
   validates :card, inclusion: { in: [true, false] }
 
   def self.of_user(user_id)
@@ -39,5 +39,14 @@ class Record < ActiveRecord::Base
 
   def self.sum_card_for_this_month(user_id)
     Record.user_this_month(user_id).where(card: true)
+  end
+
+  def self.get_month_records(user_id, year, month)
+    cutoff_day = SalaryDate.user_cutoff(user_id)
+
+    from = Date.new(year, month, cutoff_day)
+    to   = Date.new(year, month, cutoff_day).next_month
+
+    Record.of_user(user_id).where(date: from..to)
   end
 end
