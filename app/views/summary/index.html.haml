@@ -1,0 +1,8 @@
+%h1 集計
+%table.table.table-condensed
+  - @user_records_this_month.each do |category_id, payment|
+    %tr
+      %th
+        = @user_categories.find_by_id(category_id).name
+      %td
+        = "￥ #{payment}"
