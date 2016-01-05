@@ -1,8 +1,26 @@
 %h1 集計
+
+%h2 全出費
 %table.table.table-condensed
-  - @user_records_this_month.each do |category_id, payment|
+  %tr
+    %th
+      今月の出費
+    %td
+      = "￥ #{@user_records_this_month.sum(:payment)}"
+
+%h2 今月のカテゴリー別
+%table.table.table-condensed
+  - @user_records_this_month_for_category.each do |category_id, payment|
     %tr
       %th
         = @user_categories.find_by_id(category_id).name
       %td
         = "￥ #{payment}"
+
+%h2 クレジットカード
+%table.table.table-condensed
+  %tr
+    %th
+      クレジットカード
+    %td
+      = "￥ #{@card_this_month}"

@@ -36,4 +36,8 @@ class Record < ActiveRecord::Base
     end
     sums.sort
   end
+
+  def self.sum_card_for_this_month(user_id)
+    Record.user_this_month(user_id).where(card: true)
+  end
 end
