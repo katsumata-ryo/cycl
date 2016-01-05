@@ -26,7 +26,7 @@ describe Record do
 
     context "error case." do
       it "is invalid payment value" do
-        ["test", nil].each do |value|
+        [-1000, nil].each do |value|
           @record.payment = value
           expect(@record.save).to be_falsey
         end
