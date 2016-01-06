@@ -2,57 +2,36 @@
 
 作成開始: 2015-12-30
 
+<img src="https://circleci.com/gh/katsumata-ryo/tucho.svg?style=shield&circle-token=9d72be9de4bb9913de5520a95cdd544f50aec2e2" alt="circle ci shield">
 
+## Overview
 
-## やれること
-* ログイン認証
-* 家計簿の作成
-    * 機能
-        * 一回買ったらそれを入力
-        * カテゴリーを選べる
-        * 締め日を選べる
-        * 年単位の給料を入力できる
-        * 消費予算額を設定できる
-    * 見た目
-        * 今月の一覧がある
-            * クレカの一覧がある
-        * 消費予算額に対しての消費金額の一覧がある
-        * 何らかのグラフが出したい。
+TUCHOは個人的にあったら便利を詰め込んだ家計簿WEBサービスです。
 
-## データベース
+具体的には
 
-### category
+* 給料日を設定してその日を基準として一ヶ月回したい
+* 一括で12ヶ月電気代とか登録したい
+* カテゴリーごとに予算を設定して、どれくらい使っているか知りたい
+* 今月のクレジットカードの引き落としでビクビクしたくない(予測値がみたい)
+* 年単位でどういうお金の使い方をしたか見たい
 
-* name:string
-* monthly:boolean
-* budget_bag:integer
+に対応する予定です
 
-### user
+## Now
 
-※devise gemの内容
+支払いを登録してその内容を集計するところまで完了。
 
-name:string
-password:string
-
-
-
-### record
-
-* payment:integer
-* date:date
-* category:string
-* card:boolean
-* memo:text
-
-### annual_salary
-
-* year:integer
-* salary:integer
-
-###
-
-
-## メモ
+## Environment
 
 * ruby 2.3.0
 * rails 4.2.5
+* postgres
+* サーバ
+    * heroku => VPSへ移行予定
+* deploy/ci
+    * circle ci
+
+## Author
+
+Ryo Katsumata
