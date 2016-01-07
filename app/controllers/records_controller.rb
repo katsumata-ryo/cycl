@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
-  before_action :set_own_categories, only: [:new, :create, :edit, :update]
+  before_action :set_own_categories, only: [:new, :create, :edit, :update, :bulk, :bulk_create]
   before_action :set_own_records, only: [:index]
 
   # devise
@@ -62,6 +62,38 @@ class RecordsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to records_url, notice: 'Record was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # GET bulk/:number
+  def bulk
+  end
+
+  # POST bulk
+  def bulk_create
+    records = []
+
+    0.upto(params['bulk']['number'].to_i - 1) do |n|
+      date = Date.new(params['bulk']["date#{n}"]["d(1i)"].to_i, params['bulk']["date#{n}"]["d(2i)"].to_i, params['bulk']["date#{n}"]["d(3i)"].to_i)
+
+      records << Record.new(
+        payment:     params['bulk']['payment'],
+        date:        date,
+        category_id: params['bulk']['category_id'],
+        card:        params['bulk']['card'],
+        memo:        params['bulk']['memo'],
+        user_id:     params['bulk']['user_id'],
+      )
+    end
+    puts "-------"
+    puts records.first.card
+    puts "-------"
+
+    result = Record.import(records)
+    if result['failed_instances'].empty?
+      redirect_to records_url, notice: "#{params['bulk']['number']}件のレコードを登録しました"
+    else
+      redirect_to records_url, notice: "レコードの登録に失敗しました、レコードを確認して下さい: #{result['failed_instances'].map{|f| f.date}.join("と")}が失敗"
     end
   end
 

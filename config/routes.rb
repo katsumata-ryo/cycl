@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   resources :salaries
   resources :categories
   resources :records
+
+  ## records/bulk
+  get 'records/bulk/:number', to: 'records#bulk'
+  post 'records/bulk_create', to: 'records#bulk_create'
+
   devise_for :users
 
   get 'home/index'
