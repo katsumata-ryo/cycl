@@ -85,9 +85,6 @@ class RecordsController < ApplicationController
         user_id:     params['bulk']['user_id'],
       )
     end
-    puts "-------"
-    puts records.first.card
-    puts "-------"
 
     result = Record.import(records)
     if result['failed_instances'].empty?
