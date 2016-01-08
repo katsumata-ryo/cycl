@@ -1,4 +1,7 @@
 class SummaryController < ApplicationController
+  # devise
+  before_action :authenticate_user!
+
   def index
     @user_records_this_month_for_category = Record.user_this_month(current_user.id).category_sums
     @user_records_this_month = Record.user_this_month(current_user.id)

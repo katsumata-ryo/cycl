@@ -1,10 +1,10 @@
 class RecordsController < ApplicationController
+  # devise
+  before_action :authenticate_user!
+
   before_action :set_record, only: [:show, :edit, :update, :destroy]
   before_action :set_own_categories, only: [:new, :create, :edit, :update, :bulk, :bulk_create]
   before_action :set_own_records, only: [:index]
-
-  # devise
-  before_action :authenticate_user!
 
   # GET /records
   # GET /records.json
