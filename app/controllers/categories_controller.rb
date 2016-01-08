@@ -1,9 +1,9 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
-  before_action :set_own_categories, only: [:index]
-
     # devise
   before_action :authenticate_user!
+
+  before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_own_categories, only: [:index]
 
   # GET /categories
   # GET /categories.json

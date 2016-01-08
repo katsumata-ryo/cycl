@@ -1,8 +1,8 @@
 class SalariesController < ApplicationController
-  before_action :set_salary, only: [:show, :edit, :update, :destroy]
-
   # devise
   before_action :authenticate_user!
+
+  before_action :set_salary, only: [:show, :edit, :update, :destroy]
 
   # GET /salaries
   # GET /salaries.json

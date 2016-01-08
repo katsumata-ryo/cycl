@@ -1,5 +1,14 @@
-%p
+.text-center
+  %h1
+    TUCHOはあなたの「お金」が見える家計簿です
+  %p
+    「お給料日はあんなにお金があったのに、あれ?」ということありませんか
+    %br/
+    TUCHOはそんなあなたのためのWEB家計簿です。
+
   - if current_user
-    = "#{current_user.email} is login"
+    %p
+      = "#{current_user.email} さんまた使っちゃんたんですね"
   - else
-    please login.
+    %h3
+      さぁサインアップして利用を開始しましょう
