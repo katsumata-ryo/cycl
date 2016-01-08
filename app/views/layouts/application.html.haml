@@ -34,7 +34,7 @@
                   %li
                     = link_to content_tag(:i, ' NEW PAY', class: 'fa fa-yen'), new_record_path
                   %li
-                    = link_to content_tag(:i, ' BULK', class: 'fa fa-yen'), controller: "records", action: "bulk", number: 2
+                    = link_to content_tag(:i, ' BULK', class: 'fa fa-yen'), "/records/bulk/2"
                   %li
                     = link_to content_tag(:i, ' PAID', class: 'fa fa-list-alt'), records_path
             %ul.dropdown.nav.navbar-nav
