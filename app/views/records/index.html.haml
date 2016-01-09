@@ -1,28 +1,25 @@
-%h1 Listing records
+%h1 登録一覧
 
 %table.table.table-condensed
   %thead
     %tr
-      %th Payment
-      %th Date
-      %th Category
-      %th Card
-      %th Memo
-      %th
+      %th 金額
+      %th 日付
+      %th 種類
+      %th カード
       %th
       %th
 
   %tbody
     - @own_records.each do |record|
       %tr
-        %td= record.payment
+        %td= link_to "￥ #{record.payment}", record
         %td= record.date
         %td= record.category.name
-        %td= record.card
-        %td= record.memo
-        %td= link_to 'Show', record
-        %td= link_to 'Edit', edit_record_path(record)
-        %td= link_to 'Destroy', record, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td
+          %i{:class => RecordsHelper.convert_boolean_to_mark(record.card) }
+        %td= link_to content_tag(:i, '', class: 'fa fa-pencil-square'), edit_record_path(record)
+        %td= link_to content_tag(:i, '', class: 'fa fa-trash'), record, :method => :delete, :data => { :confirm => '削除します、よろしいですか?' }
 
 %br
 
