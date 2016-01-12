@@ -44,7 +44,7 @@ Category.create(
 Salary.create(
   [
     { id: 1, year: 2015, money: 220000, user_id: 1 },
-    { id: 2, year: 2016, money: 220000, user_id: 1 },
+    { id: 2, year: 2016, money: 230000, user_id: 1 },
   ]
 )
 

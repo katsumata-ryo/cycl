@@ -1,13 +1,12 @@
 class SalaryDatesController < ApplicationController
   # devise
   before_action :authenticate_user!
-
   before_action :set_salary_date, only: [:show, :edit, :update, :destroy]
+  before_action :set_user_salary_date, only: [:index, :show]
 
   # GET /salary_dates
   # GET /salary_dates.json
   def index
-    @salary_dates = SalaryDate.all
   end
 
   # GET /salary_dates/1
@@ -73,5 +72,9 @@ class SalaryDatesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def salary_date_params
       params.require(:salary_date).permit(:cutoff, :user_id)
+    end
+
+    def set_user_salary_date
+      @user_salary_date = @user.salary_date
     end
 end
