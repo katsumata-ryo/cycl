@@ -7,8 +7,6 @@
       %th
 
   %tbody
-    - @salary_dates.each do |salary_date|
-      %tr
-        %td= display(salary_date.cutoff)
-        / %td= salary_date.cutoff
-        %td= link_to '編集', edit_salary_date_path(salary_date)
+    %tr
+      %td= display(@user_salary_date.cutoff)
+      %td= link_to '変更', edit_salary_date_path(@user_salary_date)

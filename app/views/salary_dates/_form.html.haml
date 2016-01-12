@@ -8,7 +8,7 @@
 
   .field
     締め日
-    = select_tag 'salary_date[cutoff]', options_for_select(cutoff_list())
+    = select_tag 'salary_date[cutoff]', options_for_select(cutoff_list()), selected: @salary_date.cutoff.to_i
 
   .field
     = f.hidden_field :user_id, value: current_user.id
