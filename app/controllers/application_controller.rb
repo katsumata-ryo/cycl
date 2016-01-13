@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_login_user
 
+  private
+
   def set_login_user
-    @user = User.find(current_user.id)
+    if current_user
+      @user = User.find(current_user.id)
+    end
   end
 end
