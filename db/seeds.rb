@@ -11,6 +11,7 @@ User.create(
   [
     { id: 1, email: "ryo@example.com", password: "12345678", encrypted_password: "$2a$10$OgmFDX0wXHLlyAvkoaQjXOox3z26G2J1SSSB7.tfU3tCBf23hZ.Pe" }, #12345678
     { id: 2, email: "user1@example.com", password: "12345678", encrypted_password: "$2a$10$OgmFDX0wXHLlyAvkoaQjXOox3z26G2J1SSSB7.tfU3tCBf23hZ.Pe" }, #12345678
+    { id: 3, email: "yuumi@example.com", password: "12345678", encrypted_password: "$2a$10$OgmFDX0wXHLlyAvkoaQjXOox3z26G2J1SSSB7.tfU3tCBf23hZ.Pe" }, #12345678
   ],
 )
 
