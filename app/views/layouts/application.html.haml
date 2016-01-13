@@ -61,8 +61,6 @@
                   = link_to content_tag(:i, ' LOGOUT', class: 'fa fa-chevron-right'), destroy_user_session_path, method: :delete
               - else
                 %li
-                  = link_to content_tag(:i, ' SIGNUP', class: 'fa fa-chevron-right'), new_user_registration_path
-                %li
                   = link_to content_tag(:i, ' LOGIN', class: 'fa fa-chevron-right'), new_user_session_path
     -if request.path_info == '/'
       .jumbotron
