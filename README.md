@@ -2,7 +2,7 @@
 
 作成開始: 2015-12-30
 
-<img src="https://circleci.com/gh/katsumata-ryo/tucho.svg?style=shield&circle-token=9d72be9de4bb9913de5520a95cdd544f50aec2e2" alt="circle ci shield">
+<img src="https://circleci.com/gh/annp-jp/tucho.svg?style=shield&circle-token=9d72be9de4bb9913de5520a95cdd544f50aec2e2" alt="circle ci shield">
 
 ## Overview
 
