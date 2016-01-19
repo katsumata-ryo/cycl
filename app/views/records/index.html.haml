@@ -11,7 +11,7 @@
       %th
 
   %tbody
-    - @own_records.each do |record|
+    - @user_latest_record.each do |record|
       %tr
         %td= link_to "￥ #{record.payment}", record
         %td= record.date
