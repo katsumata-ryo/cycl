@@ -4,7 +4,7 @@ class RecordsController < ApplicationController
 
   before_action :set_record, only: [:show, :edit, :update, :destroy]
   before_action :set_own_categories, only: [:new, :create, :edit, :update, :bulk, :bulk_create]
-  before_action :set_own_records, only: [:index]
+  before_action :set_user_latest_record, only: [:index]
 
   # GET /records
   # GET /records.json
@@ -96,16 +96,17 @@ class RecordsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_user_latest_record
+      @user_latest_record = @user.records._latest
+    end
+
     def set_record
       @record = Record.find(params[:id])
     end
 
-    def set_own_records
-      @own_records = Record.where("user_id = #{current_user.id}").reverse_order
-    end
-
     def set_own_categories
-      @own_categories = Category.where("user_id = #{current_user.id}")
+      # @own_categories = Category.where("user_id = #{current_user.id}")
+      @own_categories = Category.own
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params

@@ -8,25 +8,24 @@ class Record < ActiveRecord::Base
   validates_numericality_of :payment
   validates :card, inclusion: { in: [true, false] }
 
-  def self.of_user(user_id)
-    Record.where("user_id = #{user_id}")
+  scope :_latest, lambda { order(:updated_at).reverse_order.limit(15) }
+  scope :_month,  lambda { |from, to| where(date: from..to) }
+  scope :_card,   lambda { where(card: true) }
+
+  def month_records(year, month)
+    user = self.first.user
+    period = user.salary_date.period(year, month)
+    where(date: period[:from]..period[:to])
   end
 
-  def self.user_this_month(user_id)
-    cutoff_day = SalaryDate.user_cutoff(user_id)
-    today      = Date.today
-    if today.day < 10
-      next_month_day = today
-      today          = today.last_month
-    else
-      next_month_day = today.next_month
-      today          = today
-    end
+  def self.this_month
+    today = Date.today
+    { year: today.year, month: today.month}
+  end
 
-    from = Date.new(today.year, today.month, cutoff_day)
-    to   = Date.new(next_month_day.year, next_month_day.month, cutoff_day)
-
-    Record.of_user(user_id).where(date: from..to)
+  def this_month_records
+    today = Date.today
+    month_records(today.year, today.month)
   end
 
   def self.category_sums
@@ -35,18 +34,5 @@ class Record < ActiveRecord::Base
       sums[category] = self.where(category: category).sum(:payment)
     end
     sums.sort
-  end
-
-  def self.sum_card_for_this_month(user_id)
-    Record.user_this_month(user_id).where(card: true)
-  end
-
-  def self.get_month_records(user_id, year, month)
-    cutoff_day = SalaryDate.user_cutoff(user_id)
-
-    from = Date.new(year, month, cutoff_day)
-    to   = Date.new(year, month, cutoff_day).next_month
-
-    Record.of_user(user_id).where(date: from..to)
   end
 end

@@ -43,10 +43,10 @@
   - @month_records.pluck(:category_id).uniq.each do |category_id|
     %tr
       %th
-        = @user_categories.find_by_id(category_id).name
+        = @categories.find_by_id(category_id).name
       %td
         ￥
         = @month_records.where(category_id: category_id).sum(:payment)
       %td
         ￥
-        = @user_categories.find_by_id(category_id).budget - @month_records.where(category_id: category_id).sum(:payment)
+        = @categories.find_by_id(category_id).budget - @month_records.where(category_id: category_id).sum(:payment)
