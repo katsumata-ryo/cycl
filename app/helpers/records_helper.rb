@@ -1,6 +1,6 @@
 module RecordsHelper
-  def self.convert_boolean_to_mark(boolean)
-    if self == true
+  def self.convert_card_to_mark(card_boolean)
+    if card_boolean == true
       'fa fa-check-square'
     else
       'fa fa-square'
