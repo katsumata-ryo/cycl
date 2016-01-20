@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get 'records/bulk/:number', to: 'records#bulk'
   post 'records/bulk_create', to: 'records#bulk_create'
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
   get 'home/index'
   get 'home/show'
