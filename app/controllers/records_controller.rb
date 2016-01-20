@@ -106,7 +106,7 @@ class RecordsController < ApplicationController
 
     def set_own_categories
       # @own_categories = Category.where("user_id = #{current_user.id}")
-      @own_categories = Category.own
+      @own_categories = @user.categories
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params

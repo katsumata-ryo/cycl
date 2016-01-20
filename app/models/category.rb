@@ -10,5 +10,5 @@ class Category < ActiveRecord::Base
   validates :monthly, inclusion: { in: [true, false] }
 
   # Scopes
-  scope :own, lambda { where( user_id: first.user_id) }
+  scope :_own, lambda { where( user_id: first.user_id) }
 end
