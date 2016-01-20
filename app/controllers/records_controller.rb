@@ -105,9 +105,9 @@ class RecordsController < ApplicationController
     end
 
     def set_own_categories
-      # @own_categories = Category.where("user_id = #{current_user.id}")
-      @own_categories = Category._own
+      @own_categories = @user.categories
     end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
       params.require(:record).permit(:payment, :date, :category_id, :card, :memo, :user_id)

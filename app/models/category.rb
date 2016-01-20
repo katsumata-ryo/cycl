@@ -9,9 +9,6 @@ class Category < ActiveRecord::Base
   validates :budget, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :monthly, inclusion: { in: [true, false] }
 
-  # Scopes
-  scope :_own, lambda { where( user_id: first.user_id) }
-
   def self.create_first(user_id)
     default_records = [
       { name: "食費", monthly: false, budget: 20000, user_id: user_id },
