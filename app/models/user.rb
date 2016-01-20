@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
   has_many :salaries
   has_one  :salary_date
 
-  after_create :insert_default_record
+  after_create :insert_default_records
 
-  def insert_default_record
+  def insert_default_records
     user_id = self.id
     # categories
     Category.create_first(user_id)
