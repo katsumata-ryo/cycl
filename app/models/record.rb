@@ -4,8 +4,8 @@ class Record < ActiveRecord::Base
   belongs_to :user
 
   # validation
-  validates_presence_of :payment, :category_id
-  validates_numericality_of :payment
+  validates_presence_of :payment, :date, :category_id, :user_id
+  validates_numericality_of :payment, :category_id, :user_id, { only_integer: true}
   validates :card, inclusion: { in: [true, false] }
 
   scope :_latest, lambda { order(:updated_at).reverse_order.limit(15) }

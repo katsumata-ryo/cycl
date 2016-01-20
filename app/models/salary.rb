@@ -3,7 +3,8 @@ class Salary < ActiveRecord::Base
   belongs_to :user
 
   # validation
-  validates_presence_of :year, :money
+  validates_presence_of :year, :money, :user_id
+  validates_numericality_of :user_id
   validates :money, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :year, format: { with: /\A(19|20)\d{2}\Z/ }
 
