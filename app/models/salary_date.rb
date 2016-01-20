@@ -13,4 +13,11 @@ class SalaryDate < ActiveRecord::Base
       :to    => (this_salary_date.next_month - 1)
     }
   end
+
+  def self.create_first(user_id)
+    default_records = [
+      { cutoff: 10, user_id: user_id },
+    ]
+    SalaryDate.create(default_records)
+  end
 end

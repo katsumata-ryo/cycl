@@ -17,4 +17,12 @@ class Salary < ActiveRecord::Base
       where(year: today.year)
     end
   }
+
+  def self.create_first(user_id)
+    default_records = [
+      { year: 2015, money: 180000, user_id: user_id },
+      { year: 2016, money: 200000, user_id: user_id },
+    ]
+    Salary.create(default_records)
+  end
 end

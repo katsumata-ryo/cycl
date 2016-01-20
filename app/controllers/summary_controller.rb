@@ -23,7 +23,7 @@ class SummaryController < ApplicationController
   private
 
   def set_own_categories
-    @categories = @user.categories.own
+    @categories = @user.categories._own
   end
 
   def set_own_salary
