@@ -20,5 +20,4 @@ class Category < ActiveRecord::Base
     ]
     Category.create(default_records)
   end
->>>>>>> master
 end
