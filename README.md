@@ -1,6 +1,7 @@
 # tutyo: Under Construcsion
 
 作成開始: 2015-12-30
+更新日　: 2016-01-25
 
 <img src="https://circleci.com/gh/annp-jp/tucho.svg?style=shield&circle-token=9d72be9de4bb9913de5520a95cdd544f50aec2e2" alt="circle ci shield">
 
