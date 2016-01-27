@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: salary_dates
+#
+#  id         :integer          not null, primary key
+#  cutoff     :integer
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class SalaryDate < ActiveRecord::Base
   # Relations
   belongs_to :user
