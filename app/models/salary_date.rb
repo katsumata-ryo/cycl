@@ -15,6 +15,7 @@ class SalaryDate < ActiveRecord::Base
 
   # Validations
   validates :cutoff, inclusion: { in: [1, 10, 15, 31] }
+  validates_presence_of :cutoff, :user_id
   validates :user_id,  uniqueness: true
 
   def period(year, month)

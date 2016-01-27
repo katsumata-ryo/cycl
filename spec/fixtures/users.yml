@@ -27,3 +27,7 @@ one:
   id: 1
   email: ryo@example.com
   encrypted_password: $2a$10$OgmFDX0wXHLlyAvkoaQjXOox3z26G2J1SSSB7.tfU3tCBf23hZ.Pe #12345678
+two:
+  id: 2
+  email: yuumi@example.com
+  encrypted_password: $2a$10$OgmFDX0wXHLlyAvkoaQjXOox3z26G2J1SSSB7.tfU3tCBf23hZ.Pe #12345678

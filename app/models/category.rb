@@ -17,8 +17,8 @@ class Category < ActiveRecord::Base
   belongs_to :user
 
   # validation
-  validates_presence_of :name
-  validates_numericality_of :budget
+  validates_presence_of :name, :user_id
+  validates_numericality_of :user_id, { only_integer: true }
   validates :budget, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :monthly, inclusion: { in: [true, false] }
 

@@ -16,5 +16,5 @@ one:
   user_id: 1
 
 two:
-  cutoff: 1
-  user_id: 1
+  cutoff: 15
+  user_id: 2
