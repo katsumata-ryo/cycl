@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources :salary_dates
+
+  authenticated :user do
+    root :to => "summary#index", :as => "user_authenticated_root"
+  end
   root to: "home#index"
 
   resources :salaries
