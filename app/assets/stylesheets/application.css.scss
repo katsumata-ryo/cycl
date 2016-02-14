@@ -17,45 +17,132 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.jumbotron{
-  background-image: url("/img/bg.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-color: #fff;
+// Modify Bootstrap
+
+a {
+  &.btn {
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+  }
+
+  &.btn-normal{
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    font-weight: bold;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      color: #666;
+    }
+  }
 }
 
-.header-bar{
-  margin: 0;
-  padding: 0;
-  height: 25px;
-  background-image: url("/img/bg.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-color: #fff;
+// General
+
+.vertical-middle{
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-
-table.account-table{
-  width: 600px;
-  margin: 0 auto;
+.top-space{
+  margin-top: 40px;
 }
 
-.account-table tr{
-  width: 300px;
-  border: 0px;
-  margin: 0 auto;
+.top-space-half {
+  margin-top: 20px;
 }
 
-.account-table td{
-  width: 300px;
-  padding: 10px;
-  text-align: left;
-}
-
-.account-table th{
-  text-align: right;
-}
-
-.space{
+.bottom-space {
   margin-bottom: 40px;
 }
+
+.bottom-space-half {
+  margin-bottom: 20px;
+}
+
+// color
+
+.text-emphasis {
+  color: #c8c935;
+}
+
+// Elements
+
+body{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Romen", "游明朝体 ミディアム";
+  color: #414141;
+  line-height: 150%;
+
+  .wrapper{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url("/img/bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-color: #fff;
+
+    .container{
+        margin: 0 auto;
+      .content {
+        margin: 0 auto;
+
+        img.title{
+          width: 540px;
+        }
+
+        img.description{
+          width: 450px;
+          margin: 10px;
+        }
+        img.separater {
+          width: 540px;
+        }
+      }
+    }
+  }
+}
+
+// .header-bar{
+//   margin: 0;
+//   padding: 0;
+//   height: 25px;
+// }
+
+
+// table.account-table{
+//   width: 600px;
+//   margin: 0 auto;
+// }
+
+// .account-table tr{
+//   width: 300px;
+//   border: 0px;
+//   margin: 0 auto;
+// }
+
+// .account-table td{
+//   width: 300px;
+//   padding: 10px;
+//   text-align: left;
+// }
+
+// .account-table th{
+//   text-align: right;
+// }
+
+// .space{
+//   margin-bottom: 40px;
+// }
