@@ -1,0 +1,15 @@
+.container
+  .globalmenu
+    %ul
+      %li
+        = link_to root_url, class: "menu" do
+          %i.fa.fa-home
+      %li
+        = link_to new_record_path, class: "menu" do
+          %i.fa.fa-pencil
+      %li
+        = link_to summary_path, class: "menu" do
+          %i.fa.fa-list
+      %li
+        = link_to destroy_user_session_path, class: "menu" do
+          %i.fa.fa-sign-out

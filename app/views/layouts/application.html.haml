@@ -14,9 +14,9 @@
         .container
       .container.vertical-middle
         = yield
+    - if user_signed_in?
       %footer
-        .container
-
+        = render partial: 'layouts/global_menu'
 / !!!
 / %html
 /   %head
