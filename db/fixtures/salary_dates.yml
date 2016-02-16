@@ -11,10 +11,7 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  cutoff: 1
-  user_id: 1
-
-two:
-  cutoff: 1
+salary_dates_1:
+  id: 1
+  cutoff: 10
   user_id: 1
