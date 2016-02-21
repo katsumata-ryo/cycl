@@ -11,12 +11,15 @@
   %body
     .wrapper
       %header
-        .container
-      .container.vertical-middle
-        = yield
-    - if user_signed_in?
-      %footer
-        = render partial: 'layouts/global_menu'
+        - if user_signed_in?
+          = render partial: 'layouts/global_menu'
+      .container
+        .content
+          - if user_signed_in?
+            = yield
+          - else
+            .vertical-middle
+              = yield
 / !!!
 / %html
 /   %head

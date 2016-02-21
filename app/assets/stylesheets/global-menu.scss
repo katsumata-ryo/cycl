@@ -1,0 +1,47 @@
+// Global Menu
+
+.globalmenu {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  height: 100vh;
+  margin: 0;
+  width: 50px;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 1;
+  margin:0 auto;
+
+  ul {
+    padding: 10px;
+
+    li {
+      list-style-type: none;
+      margin: 0;
+      padding-bottom: 10px;
+
+      a.menu {
+        text-decoration: none;
+        color: #515151;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+
+        &:hover{
+          color: #919191;
+        }
+
+        i.fa {
+          font-size: 30px;
+          }
+        }
+      }
+
+    &.signout {
+      position: fixed;
+      bottom: 0;
+
+      li {
+        padding: 0;
+      }
+    }
+  }
+}
