@@ -210,6 +210,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.6.0)
+    simple_seed (0.0.2)
+      activerecord (>= 4.0)
     slop (3.6.0)
     spring (1.6.1)
     sprockets (3.5.2)
@@ -271,6 +273,7 @@ DEPENDENCIES
   rspec_junit_formatter (= 0.2.2)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  simple_seed
   spring
   sqlite3
   turbolinks

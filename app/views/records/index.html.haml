@@ -1,26 +1,28 @@
-%h1 登録一覧
+%h3 登録一覧
 
 %table.table.table-condensed
   %thead
     %tr
-      %th 金額
       %th 日付
+      %th 金額
       %th 種類
       %th カード
-      %th
-      %th
+      %th 編集
+      %th 削除
 
   %tbody
     - @user_latest_record.each do |record|
       %tr
-        %td= link_to "￥ #{record.payment}", record
-        %td= record.date
-        %td= record.category.name
-        %td
-          %i{:class => RecordsHelper.convert_card_to_mark(record.card) }
-        %td= link_to content_tag(:i, '', class: 'fa fa-pencil-square'), edit_record_path(record)
-        %td= link_to content_tag(:i, '', class: 'fa fa-trash'), record, :method => :delete, :data => { :confirm => '削除します、よろしいですか?' }
-
-%br
-
-= link_to 'New Record', new_record_path
+        - even_odd = cycle("even", "odd")
+        %td{ class: even_odd}
+          = record.date
+        %td{ class: even_odd}
+          = number_to_currency(record.payment)
+        %td{ class: even_odd}
+          = record.category.name
+        %td{ class: even_odd}
+          %i{ :class => convert_boolean(record.card) }
+        %td{ class: even_odd}
+          = link_to content_tag(:i, '', class: 'fa fa-pencil'), edit_record_path(record)
+        %td{ class: even_odd}
+          = link_to content_tag(:i, '', class: 'fa fa-remove'), record, :method => :delete, :data => { :confirm => '削除します、よろしいですか?' }

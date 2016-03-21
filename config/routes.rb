@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
   resources :salary_dates
+
+  authenticated :user do
+    root :to => "summary#index", :as => "user_authenticated_root"
+  end
   root to: "home#index"
 
   resources :salaries
-  resources :categories
   resources :records
+  resources :configs, only: ['index']
+  resources :salaries, only: ['new', 'edit', 'update', 'create', 'destroy']
+  resources :categories, only: ['new', 'edit', 'update', 'create', 'destroy']
+  resources :salary_dates, only: ['edit', 'update', 'create', 'destroy']
 
   ## records/bulk
   get 'records/bulk/:number', to: 'records#bulk'

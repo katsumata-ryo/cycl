@@ -1,14 +1,30 @@
-.text-center
+.welcome_content
   %h1
-    TUCHOはあなたの「お金」が見える家計簿です
-  %p
-    「お給料日はあんなにお金があったのに、あれ?」ということありませんか
+    %strong
+      Cycl
+    は
     %br/
-    TUCHOはそんなあなたのためのWEB家計簿です。
+    お金の流れを管理しあなたのお金を「見える化」します
 
-  - if current_user
-    %p
-      = "#{current_user.email} さんまた使っちゃんたんですね"
-  - else
-    %h3
-      さぁサインアップして利用を開始しましょう
+  %p.text-center.top-space-half
+    %img{:src => "/img/separater_.png", :alt => ""}/
+
+  %p.bottom-space-half
+    %br/
+    もしあなたが「気づいたら財布からお金がなくなっている」と感じているのであれば、
+    Cyclは何かお手伝いができるかもしれません。
+
+  %p.bottom-space-half
+    まずは使ってみませんか？
+    利用開始は下記から
+    %br/
+    (※現在 クローズドβで開発中)
+
+  .text-center.space-half
+    = link_to "利用登録", "/", {class: 'btn btn-normal'}
+
+  %p.text-center
+    すでに登録済みの方はこちらから
+
+  .text-center.space-half
+    = link_to "ログイン", new_user_session_path, {class: 'btn btn-normal'}

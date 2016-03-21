@@ -1,0 +1,377 @@
+# == Schema Information
+#
+# Table name: records
+#
+#  id          :integer          not null, primary key
+#  payment     :integer
+#  date        :date
+#  card        :boolean
+#  memo        :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  category_id :integer
+#  user_id     :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+
+records_01:
+  id: 1
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ1"
+  category_id: 1
+  user_id: 1
+
+records_02:
+  id: 2
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ2"
+  category_id: 2
+  user_id: 1
+
+records_03:
+  id: 3
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ3"
+  category_id: 3
+  user_id: 1
+
+records_04:
+  id: 4
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ4"
+  category_id: 4
+  user_id: 1
+
+records_05:
+  id: 5
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ5"
+  category_id: 5
+  user_id: 1
+
+records_06:
+  id: 6
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ6"
+  category_id: 6
+  user_id: 1
+
+records_07:
+  id: 7
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ7"
+  category_id: 7
+  user_id: 1
+
+records_08:
+  id: 8
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ8"
+  category_id: 8
+  user_id: 1
+
+records_09:
+  id: 9
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ9"
+  category_id: 9
+  user_id: 1
+
+records_10:
+  id: 10
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ10"
+  category_id: 10
+  user_id: 1
+
+records_11:
+  id: 11
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ11"
+  category_id: 11
+  user_id: 1
+
+records_12:
+  id: 12
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ12"
+  category_id: 12
+  user_id: 1
+
+records_13:
+  id: 13
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ13"
+  category_id: 13
+  user_id: 1
+
+records_14:
+  id: 14
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ14"
+  category_id: 14
+  user_id: 1
+
+records_15:
+  id: 15
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ15"
+  category_id: 15
+  user_id: 1
+
+records_16:
+  id: 16
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ16"
+  category_id: 16
+  user_id: 1
+
+records_17:
+  id: 17
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ17"
+  category_id: 17
+  user_id: 1
+
+records_18:
+  id: 18
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ18"
+  category_id: 18
+  user_id: 1
+
+records_19:
+  id: 19
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ19"
+  category_id: 19
+  user_id: 1
+
+records_20:
+  id: 20
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ20"
+  category_id: 20
+  user_id: 1
+
+records_21:
+  id: 21
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ21"
+  category_id: 1
+  user_id: 2
+
+records_22:
+  id: 22
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ22"
+  category_id: 2
+  user_id: 2
+
+records_23:
+  id: 23
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ23"
+  category_id: 3
+  user_id: 2
+
+records_24:
+  id: 24
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ24"
+  category_id: 4
+  user_id: 2
+
+records_25:
+  id: 25
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ25"
+  category_id: 5
+  user_id: 2
+
+records_26:
+  id: 26
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ26"
+  category_id: 6
+  user_id: 2
+
+records_27:
+  id: 27
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ27"
+  category_id: 7
+  user_id: 2
+
+records_28:
+  id: 28
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ28"
+  category_id: 8
+  user_id: 2
+
+records_29:
+  id: 29
+  payment: 1000
+  date: 2016-02-01
+  card: true
+  memo: "サンプルデータ29"
+  category_id: 9
+  user_id: 2
+
+records_30:
+  id: 30
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ30"
+  category_id: 10
+  user_id: 2
+
+records_31:
+  id: 31
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ31"
+  category_id: 11
+  user_id: 2
+
+records_32:
+  id: 32
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ32"
+  category_id: 12
+  user_id: 2
+
+records_33:
+  id: 33
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ33"
+  category_id: 13
+  user_id: 2
+
+records_34:
+  id: 34
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ34"
+  category_id: 14
+  user_id: 2
+
+records_35:
+  id: 35
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ35"
+  category_id: 15
+  user_id: 2
+
+records_36:
+  id: 36
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ36"
+  category_id: 16
+  user_id: 2
+
+records_37:
+  id: 37
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ37"
+  category_id: 17
+  user_id: 2
+
+records_38:
+  id: 38
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ38"
+  category_id: 18
+  user_id: 2
+
+records_39:
+  id: 39
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ39"
+  category_id: 19
+  user_id: 2
+
+records_40:
+  id: 40
+  payment: 1000
+  date: 2016-01-02
+  card: false
+  memo: "サンプルデータ40"
+  category_id: 20
+  user_id: 2

@@ -1,39 +1,52 @@
-= form_for @record do |f|
-  - if @record.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@record.errors.count, "error")} prohibited this record from being saved:"
-      %ul
-        - @record.errors.full_messages.each do |msg|
-          %li= msg
+.small
+  %span.alert *
+  必須
 
-  .small
-    (*) 必須
-  .field
-    %strong
-      金額(*)
-    %br/
-    = f.number_field :payment
-  .field
-    %strong
-      日時
-    %br/
-    = f.date_select :date
-  .field
-    %strong
-      カテゴリー(*)
-    %br/
-    = collection_select(:record, :category_id, @own_categories, :id, :name)
-  .field
-    %strong
-      クレジットカード(*)
-    %br/
-    = f.check_box :card
-  .field
-    %strong
-      メモ
-    %br/
-    = f.text_area :memo
-  .field
-    = f.hidden_field :user_id, value: current_user.id
-  .actions
-    = f.submit 'Save'
+.form-container
+  .float-box
+    = form_for @record do |f|
+      - if @record.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@record.errors.count, "error")} prohibited this record from being saved:"
+          %ul
+            - @record.errors.full_messages.each do |msg|
+              %li= msg
+
+      %table.form
+        %tr
+          %th
+            金額
+            %span.alert *
+          %td
+            = f.number_field :payment
+        %tr
+          %th
+            日時
+            %span.alert *
+          %td
+            = f.date_select :date
+        %tr
+          %th
+            カテゴリー
+            %span.alert *
+          %td
+            = collection_select(:record, :category_id, @own_categories, :id, :name)
+        %tr
+          %th
+            クレジットカード
+            %span.alert *
+          %td
+            = f.check_box :card
+
+      %table.form-memo
+        %tr
+          %th
+            メモ
+          %td
+            = f.text_area :memo
+
+      .field.space-top-half
+        = f.hidden_field :user_id, value: current_user.id
+
+      .actions
+        = f.submit 'Save', class: 'btn btn-normal'

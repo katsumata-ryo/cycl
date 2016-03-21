@@ -3,72 +3,21 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:name =>"viewport", :content => "width=device-width", 'initial-scale' => 1}
-    %title Tucho
+    %title Cycl - こんどこそお金をしっかり管理
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body
-    %header
-      %nav.navbar-inverse.navbar-static-top
-        .container
-          .navbar-header
-            %button.navbar-toggle{ 'data-toggle' => "collapse", 'data-target' => "#collapse-target"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-            = link_to content_tag(:i, ' TUCHO', class: 'fa fa-home'), root_path, class: "navbar-brand"
-          .collapse.navbar-collapse#collapse-target
-            %ul.nav.navbar-nav
-              %li
-                = link_to content_tag(:i, ' 集計', class: 'fa fa-bar-chart'), summary_path
-              %li
-                = link_to content_tag(:i, ' 登録', class: 'fa fa-yen'), new_record_path
-            %ul.dropdown.nav.navbar-nav
-              %li
-                %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                  %i.fa.fa-list-alt
-                  通帳
-                  %span.caret
-                %ul.dropdown-menu
-                  %li
-                    = link_to content_tag(:i, ' 一括登録', class: 'fa fa-yen'), "/records/bulk/2"
-                  %li
-                    = link_to content_tag(:i, ' 最近の登録', class: 'fa fa-list-alt'), records_path
-
-            %ul.nav.navbar-nav.navbar-right
-              - if user_signed_in?
-                %li
-                  %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                    %i.fa.fa-envelope
-                    = current_user.email
-                    %span.caret
-                  %ul.dropdown-menu
-                    %li
-                      = link_to content_tag(:i, ' プロフィール変更', class: 'fa fa-user'), edit_user_registration_path
-                    %li
-                      = link_to content_tag(:i, ' カテゴリー設定', class: 'fa fa-th-list'), categories_path
-                    %li
-                      = link_to content_tag(:i, ' 収入設定', class: 'fa fa-paperclip'), salaries_path
-                    %li
-                      = link_to content_tag(:i, ' 給料日設定', class: 'fa fa-calendar'), salary_dates_path
-                    %li
-                      = link_to content_tag(:i, ' ログアウト', class: 'fa fa-chevron-right'), destroy_user_session_path, method: :delete
-              - else
-                %li
-                  = link_to content_tag(:i, ' ログイン', class: 'fa fa-chevron-right'), new_user_session_path
-    -if request.path_info == '/'
-      .jumbotron
-        .container
-          %h1.text-center
-            TUCHO
-          %p.text-center
-            This is Managed Passbook.
-    - else
-      .header-bar
-    .container
-      %p.notice= notice
-      %p.alert= alert
-      = yield
-
+  - bgimg = user_signed_in? ? 'login' : 'welcome'
+  %body{ class: bgimg }
+    .wrapper
+      %header
+        - if user_signed_in?
+          .container
+            = render partial: 'layouts/title'
+            = render partial: 'layouts/global_menu'
+            = yield
+            = render partial: 'layouts/menuspace'
+        - else
+          .container
+            = yield

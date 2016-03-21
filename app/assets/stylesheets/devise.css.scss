@@ -1,0 +1,29 @@
+.content {
+  width: 411px;
+  @extend .box-middle;
+
+  img.title{
+    width: 400px;
+  }
+
+  img.description{
+    width: 400px;
+    margin: 10px;
+  }
+
+  img.separater {
+    width: 400px;
+  }
+  h1 {
+    font-weight: lighter;
+    line-height: 120%;
+    font-size: 30px;
+    color: $c_normal;
+
+    strong {
+      font-size: 36px;
+      font-weight: bold;
+      color: $c_title;
+    }
+  }
+}

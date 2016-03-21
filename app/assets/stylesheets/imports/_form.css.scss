@@ -1,0 +1,59 @@
+.form-container {
+  @extend .box-center;
+
+  .float-box {
+    table.form{
+      float: left;
+
+      tr {
+        th {
+          width: 150px;
+          height: 20px;
+          text-align: left;
+          padding-bottom: 10px;
+        }
+
+        td {
+          width: 200px;
+          input {
+            @extend .form-reset;
+            width: 200px;
+            height: 20px;
+            padding: 5px;
+          }
+          select {
+            @extend .form-reset;
+            height: 20px;
+            padding: 5px;
+          }
+        }
+      }
+    }
+
+    table.form-memo {
+      float: left;
+
+      tr {
+        vertical-align: top;
+
+        th {
+          width: 50px;
+        }
+        td{
+          width: 250px;
+          height: 100px;
+
+          textarea {
+            @extend .form-reset;
+            width: 250px;
+            height: 75px;
+          }
+        }
+      }
+    }
+
+    .actions{
+      clear: both;
+    }
+  }
+}

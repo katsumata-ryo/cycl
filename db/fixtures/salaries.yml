@@ -1,37 +1,25 @@
 # == Schema Information
 #
-# Table name: categories
+# Table name: salaries
 #
 #  id         :integer          not null, primary key
-#  name       :string
-#  monthly    :boolean
-#  budget     :integer
+#  year       :integer
+#  money      :integer
+#  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+salary_1:
   id: 1
-  name: 食費
-  monthly: false
-  budget: 10000
+  year: 2015
+  money: 220000
   user_id: 1
 
-two:
+salary_2:
   id: 2
-  name: 携帯
-  monthly: true
-  budget: 8000
+  year: 2016
+  money: 230000
   user_id: 1
-
-three:
-  id: 3
-  name: その他
-  monthly: true
-  budget: 0
-  user_id: 1
-
-

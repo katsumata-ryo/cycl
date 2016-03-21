@@ -1,0 +1,114 @@
+- if notice
+  %p#notice.text-center.space-half
+    = "お知らせ: #{notice}"
+
+%h3 プロフィール設定
+
+.space-bottom-half
+  ログインに使用する「メールアドレス」と「パスワード」の変更が可能です。
+
+%table.table
+  %tr
+    %th
+      メールアドレス
+  %tr
+    %td
+      = @user.email
+
+.text-center
+  = link_to edit_user_registration_path, class: "btn btn-normal" do
+    %i{class: 'fa fa-refresh space-half'}
+    プロフィール設定の更新
+
+%h3 カテゴリー設定
+
+.space-bottom-half
+  カテゴリーの編集は、各カテゴリーの右にある鉛筆アイコンをクリック。
+  カテゴリーの削除は、各カテゴリーの右にあるゴミ箱アイコンをクリック。
+  カテゴリーの追加は、下にある追加ボタンを押してください。
+
+%table.table
+  %tr
+    %th
+      カテゴリー名
+    %th
+      定期出費
+    %th
+      予算
+    %th.transparent.icon
+      = ""
+    %th.transparent.icon
+      = ""
+  - @categories.each do |category|
+    %tr
+      %td
+        = category.name
+      %td
+        %i{ :class => convert_boolean(category.monthly)}
+      %td
+        = category.budget
+      %td
+        = link_to content_tag(:i, '', class: 'fa fa-pencil'), edit_category_path(category)
+      %td
+        = link_to content_tag(:i, '', class: 'fa fa-remove'), category, :method => :delete, :data => { :confirm => "#{category.name}を削除しますがよろしいですか？"  }
+
+.text-center
+  = link_to new_category_path, class: "btn btn-normal" do
+    %i{class: 'fa fa-plus space-half'}
+    カテゴリーの追加
+
+%h3 給料金額設定
+
+.space-bottom-half
+  給料日の編集は、各給料日の右にある鉛筆アイコンをクリック。
+  給料日の削除は、各給料日の右にあるゴミ箱アイコンをクリック。
+  給料日の追加は、下にある追加ボタンを押してください。
+
+%table.table
+  %tr
+    %th
+      年
+    %th
+      金額
+    %th
+      使用する
+    %th.transparent.icon
+      = ""
+    %th.transparent.icon
+      = ""
+  - @salaries.each do |salary|
+    %tr
+      %td
+        = salary.year
+      %td
+        = salary.money
+      %td
+        %i{class: convert_boolean(salary.enable)}
+      %td
+        = link_to content_tag(:i, '', class: 'fa fa-pencil'), edit_salary_path(salary)
+      %td
+        = link_to content_tag(:i, '', class: 'fa fa-remove'), salary, :method => :delete, :data => { :confirm => "#{salary.year}を削除しますがよろしいですか？" }
+.text-center
+  = link_to new_salary_path, class: "btn btn-normal" do
+    %i{class: 'fa fa-plus space-half'}
+    給与設定の追加
+
+%h3 給料日設定
+
+.space-bottom-half
+  給料日の編集は更新のボタンを押してください
+
+%table.table
+  %tr
+    %th
+      日にち
+
+  - @salary_date.each do |salary_date|
+    %tr
+      %td
+        = salary_date.cutoff
+
+.text-center
+  = link_to edit_salary_date_path(@salary_date.first), class: "btn btn-normal" do
+    %i{class: 'fa fa-refresh space-half'}
+    給料日の更新

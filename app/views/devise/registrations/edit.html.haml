@@ -1,50 +1,46 @@
-.text-center
-  %h2
-    アカウント情報の変更
-  .space
+%h3
+  アカウント情報の変更
+.space
 
-  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-    = devise_error_messages!
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = devise_error_messages!
 
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      %div
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
+  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+    %div
+      Currently waiting confirmation for: #{resource.unconfirmed_email}
 
-    %table.account-table
-      %tr
-        %th
-          メールアドレス
-        %td
-          = f.email_field :email, autofocus: true
-      %tr
-        %th
-          パスワード
-        %td
-          = f.password_field :password, autocomplete: "off"
-          %br/
-          %i.small
-            ※もし変更の必要がない場合は、空にして下さい。
-      %tr
-        %th
-          確認用パスワード
-        %td
-          = f.password_field :password_confirmation, autocomplete: "off"
-      %tr
-        %th
-          新しいパスワード
-        %td
-          = f.password_field :current_password, autocomplete: "off"
-          %br/
-          %i.small
-            ※変更の確認に必要です
+  %table
+    %tr
+      %th
+        メールアドレス
+      %td
+        = f.email_field :email, autofocus: true
+    %tr
+      %th
+        パスワード
+      %td
+        = f.password_field :password, autocomplete: "off"
+        %br/
+        %i.small
+          ※もし変更の必要がない場合は、空にして下さい。
+    %tr
+      %th
+        確認用パスワード
+      %td
+        = f.password_field :password_confirmation, autocomplete: "off"
+    %tr
+      %th
+        新しいパスワード
+      %td
+        = f.password_field :current_password, autocomplete: "off"
+        %br/
+        %i.small
+          ※変更の確認に必要です
 
-    .actions
-      = f.submit "アカウントの更新"
-  .space
+  .actions
+    = f.submit "アカウントの更新"
 
-  %h3 アカウントの停止
-  .space
+%h3 アカウントの停止
 
-  %p
-    残念ですけどまた逢いましょう #{button_to "アカウントの停止", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-  = link_to "Back", :back
+%p
+  残念ですけどまた逢いましょう #{button_to "アカウントの停止", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}

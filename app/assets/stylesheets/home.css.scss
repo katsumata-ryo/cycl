@@ -1,0 +1,37 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.welcome_content {
+  width: 411px;
+  @extend .box-middle;
+
+  img.title{
+    width: 400px;
+  }
+
+  img.description{
+    width: 400px;
+    margin: 10px;
+  }
+
+  img.separater {
+    width: 400px;
+  }
+  h1 {
+    font-weight: lighter;
+    line-height: 120%;
+    font-size: 30px;
+    color: $c_normal;
+
+    strong {
+      font-size: 36px;
+      font-weight: bold;
+      color: $c_title;
+    }
+  }
+}
+
+.bottom-space {
+  height: 75px;
+}

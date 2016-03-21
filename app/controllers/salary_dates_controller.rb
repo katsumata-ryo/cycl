@@ -41,11 +41,9 @@ class SalaryDatesController < ApplicationController
 
     respond_to do |format|
       if @salary_date.save
-        format.html { redirect_to @salary_date, notice: 'Salary date was successfully created.' }
-        format.json { render :show, status: :created, location: @salary_date }
+        format.html { redirect_to configs_path, notice: '給料日情報を追加しました' }
       else
         format.html { render :new }
-        format.json { render json: @salary_date.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -55,11 +53,9 @@ class SalaryDatesController < ApplicationController
   def update
     respond_to do |format|
       if @salary_date.update(salary_date_params)
-        format.html { redirect_to @salary_date, notice: 'Salary date was successfully updated.' }
-        format.json { render :show, status: :ok, location: @salary_date }
+        format.html { redirect_to configs_path, notice: '給料日情報を更新しました' }
       else
         format.html { render :edit }
-        format.json { render json: @salary_date.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,8 +65,7 @@ class SalaryDatesController < ApplicationController
   def destroy
     @salary_date.destroy
     respond_to do |format|
-      format.html { redirect_to salary_dates_url, notice: 'Salary date was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to configs_path, notice: '給料日情報を削除しました' }
     end
   end
 
