@@ -13,7 +13,7 @@ deployment:
   staging:
     branch: master
     heroku:
-      appname: tucho
+      appname: cycl
 
 #   # Override /etc/hosts
 #   hosts:
