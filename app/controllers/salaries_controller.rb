@@ -43,11 +43,9 @@ class SalariesController < ApplicationController
 
     respond_to do |format|
       if @salary.save
-        format.html { redirect_to @salary, notice: 'Salary was successfully created.' }
-        format.json { render :show, status: :created, location: @salary }
+        format.html { redirect_to configs_path, notice: '新しい給料情報を追加しました' }
       else
         format.html { render :new }
-        format.json { render json: @salary.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,11 +55,9 @@ class SalariesController < ApplicationController
   def update
     respond_to do |format|
       if @salary.update(salary_params)
-        format.html { redirect_to @salary, notice: 'Salary was successfully updated.' }
-        format.json { render :show, status: :ok, location: @salary }
+        format.html { redirect_to configs_path, notice: '給料情報を更新しました' }
       else
         format.html { render :edit }
-        format.json { render json: @salary.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -71,8 +67,7 @@ class SalariesController < ApplicationController
   def destroy
     @salary.destroy
     respond_to do |format|
-      format.html { redirect_to salaries_url, notice: 'Salary was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to configs_path, notice: '給料情報を削除しました' }
     end
   end
 
@@ -89,6 +84,6 @@ class SalariesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def salary_params
-    params.require(:salary).permit(:year, :money, :user_id)
+    params.require(:salary).permit(:year, :money, :user_id, :enable)
   end
 end

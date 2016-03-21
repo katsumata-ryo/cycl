@@ -7,6 +7,7 @@ class SummaryController < ApplicationController
     today = Date.today
     period = @user.salary_date.period(today.year, today.month)
 
+    @categories = Category.all
     @records_this_month              = @user.records._month(period[:from], period[:to])
     @records_this_month_for_category = @records_this_month.category_sums
     @card_this_month                     = @records_this_month._card.sum(:payment)
@@ -27,6 +28,6 @@ class SummaryController < ApplicationController
   end
 
   def set_own_salary
-    @salary = @user.salaries._own.first
+    @salary = @user.salaries.find_by(enable: true)
   end
 end

@@ -6,13 +6,19 @@
         - @salary.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .field.space-bottom-half
     年度
     = f.number_field :year
-  .field
+
+  .field.space-bottom-half
     月収
     = f.number_field :money
-  .field
+
+  .field.space-bottom-half
+    使用する
+    = f.check_box :enable
+
+  .field.space-bottom-half
     = f.hidden_field :user_id, value: current_user.id
   .actions
     = f.submit 'Save'

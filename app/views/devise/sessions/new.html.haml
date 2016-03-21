@@ -1,18 +1,22 @@
-.text-center
-  %h2 ログイン
+.content.text-center
+  %h2 LOGIN
+
+  利用するにはログインが必要です。
+
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
+    .field.space-half
       メールアドレス
       %br/
       = f.email_field :email, autofocus: true
-    .field
+
+    .field.space-half
       パスワード
       %br/
       = f.password_field :password, autocomplete: "off"
+
     - if devise_mapping.rememberable?
       .field
         = f.check_box :remember_me
         パスワードを記憶する
-    .actions
+    .actions.space-half
       = f.submit "ログイン"
-  = render "devise/shared/links"

@@ -1,32 +1,30 @@
 .welcome_content
-  %h1.text-center
-    %img.title{:src => "img/title.png", :alt => "spendcycle"}/
-  %p.text-center.top-space-half.bottom-space-half
-    %strong.text-emphasis
-      SPENDCYCLE
-    は支出を管理しあなたの財布を
-    %strong.text-emphasis
-      見える化
-    します。
-  %p.text-center.top-space-half
-    %img{:src => "img/separater_.png", :alt => ""}/
+  %h1
+    %strong
+      Cycl
+    は
+    %br/
+    お金の流れを管理しあなたのお金を「見える化」します
 
-  %p.text-center
+  %p.text-center.top-space-half
+    %img{:src => "/img/separater_.png", :alt => ""}/
+
+  %p.bottom-space-half
     %br/
     もしあなたが「気づいたら財布からお金がなくなっている」と感じているのであれば、
-    SPENDCYCLEは何かお手伝いができるかもしれません。
+    Cyclは何かお手伝いができるかもしれません。
 
-  %p.text-center.top-space-half
+  %p.bottom-space-half
     まずは使ってみませんか？
     利用開始は下記から
     %br/
     (※現在 クローズドβで開発中)
 
-  .text-center
-    = link_to "利用登録", "/",{class: 'btn btn-normal'}
+  .text-center.space-half
+    = link_to "利用登録", "/", {class: 'btn btn-normal'}
 
-  %p.text-center.top-space-half.top-space-half
+  %p.text-center
     すでに登録済みの方はこちらから
 
-  .text-center
-    = link_to "ログイン", new_user_session_path,{class: 'btn btn-normal'}
+  .text-center.space-half
+    = link_to "ログイン", new_user_session_path, {class: 'btn btn-normal'}

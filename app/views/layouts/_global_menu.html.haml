@@ -1,34 +1,24 @@
-.container
-  .globalmenu
-    %ul
-      %li
-        = link_to root_url, class: "menu" do
-          %i.fa.fa-home
-      %li
-        = link_to new_record_path, class: "menu" do
-          %i.fa.fa-pencil-square-o
-      %li
-        = link_to "/records/bulk/2", class: "menu" do
-          %i.fa.fa-files-o
-      %li
-        = link_to records_path, class: "menu" do
-          %i.fa.fa-file-text-o
-      %li
-        = link_to summary_path, class: "menu" do
-          %i.fa.fa-list
-      %li
-        = link_to edit_user_registration_path, class: "menu" do
-          %i.fa.fa-user
-      %li
-        = link_to categories_path, class: "menu" do
-          %i.fa.fa-th-list
-      %li
-        = link_to salaries_path, class: "menu" do
-          %i.fa.fa-paperclip
-      %li
-        = link_to salary_dates_path, class: "menu" do
-          %i.fa.fa-calender
-    %ul.signout
-      %li
-        = link_to destroy_user_session_path, class: "menu" do
-          %i.fa.fa-sign-out
+.globalmenu
+  .menu
+    %span
+      = link_to root_url, class: "menu" do
+        %i.fa.fa-caret-right
+        ホーム
+    %span
+      = link_to new_record_path, class: "menu" do
+        %i.fa.fa-caret-right
+        支払の追加
+    %span
+      = link_to records_path, class: "menu" do
+        %i.fa.fa-caret-right
+        最近の登録
+    %span
+      = link_to configs_path, class: "menu" do
+        %i.fa.fa-caret-right
+        設定
+
+  %div.signout
+    %span
+      = link_to destroy_user_session_path, class: "menu" do
+        %i.fa.fa-sign-out
+        ログアウト

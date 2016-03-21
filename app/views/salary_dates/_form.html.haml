@@ -6,11 +6,11 @@
         - @salary_date.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .field.space-bottom-half
     締め日
     = select_tag 'salary_date[cutoff]', options_for_select(cutoff_list()), selected: @salary_date.cutoff.to_i
 
-  .field
+  .field.space-bottom-half
     = f.hidden_field :user_id, value: current_user.id
   .actions
     = f.submit 'Save'

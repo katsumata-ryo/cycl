@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :salaries
-  resources :categories
   resources :records
+  resources :configs, only: ['index']
+  resources :salaries, only: ['new', 'edit', 'update', 'create', 'destroy']
+  resources :categories, only: ['new', 'edit', 'update', 'create', 'destroy']
+  resources :salary_dates, only: ['edit', 'update', 'create', 'destroy']
 
   ## records/bulk
   get 'records/bulk/:number', to: 'records#bulk'

@@ -12,7 +12,7 @@
 #
 
 class CategoriesController < ApplicationController
-    # devise
+  # devise
   before_action :authenticate_user!
 
   before_action :set_category, only: [:show, :edit, :update, :destroy]
@@ -21,7 +21,6 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @own_categories
   end
 
   # GET /categories/1
@@ -45,11 +44,9 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
+        format.html { redirect_to configs_path, notice: "新しいカテゴリー(#{@category.name})を追加しました" }
       else
         format.html { render :new }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -59,11 +56,9 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
-        format.json { render :show, status: :ok, location: @category }
+        format.html { redirect_to configs_path, notice: "#{@category.name}を更新しました" }
       else
         format.html { render :edit }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -73,8 +68,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to configs_path, notice: "カテゴリー(#{@category.name})を削除しました" }
     end
   end
 
@@ -85,7 +79,7 @@ class CategoriesController < ApplicationController
     end
 
     def set_own_categories
-      @own_categories = Category.where("user_id = #{current_user.id}")
+      @categories = Category.where(user_id: current_user.id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
