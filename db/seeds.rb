@@ -9,5 +9,4 @@
 import_fixture :users
 import_fixture :categories
 import_fixture :salaries
-import_fixture :salary_dates
 import_fixture :records

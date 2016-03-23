@@ -27,7 +27,6 @@ class User < ActiveRecord::Base
   has_many :records
   has_many :categories
   has_many :salaries
-  has_one  :salary_date
 
   after_create :insert_default_records
 
@@ -38,8 +37,5 @@ class User < ActiveRecord::Base
 
     # salaries
     Salary.create_first(user_id)
-
-    # salary_date
-    SalaryDate.create_first(user_id)
   end
 end

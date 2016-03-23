@@ -92,23 +92,3 @@
   = link_to new_salary_path, class: "btn btn-normal" do
     %i{class: 'fa fa-plus space-half'}
     給与設定の追加
-
-%h3 給料日設定
-
-.space-bottom-half
-  給料日の編集は更新のボタンを押してください
-
-%table.table
-  %tr
-    %th
-      日にち
-
-  - @salary_date.each do |salary_date|
-    %tr
-      %td
-        = salary_date.cutoff
-
-.text-center
-  = link_to edit_salary_date_path(@salary_date.first), class: "btn btn-normal" do
-    %i{class: 'fa fa-refresh space-half'}
-    給料日の更新

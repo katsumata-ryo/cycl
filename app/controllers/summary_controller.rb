@@ -1,27 +1,25 @@
 class SummaryController < ApplicationController
   # devise
   before_action :authenticate_user!
-  before_action :set_own_categories, :set_own_salary
+  before_action :set_own_categories, :set_own_salary, :set_records
 
   def index
-    today = Date.today
-    period = @user.salary_date.period(today.year, today.month)
-
-    @categories = Category.all
-    @records_this_month              = @user.records._month(period[:from], period[:to])
-    @records_this_month_for_category = @records_this_month.category_sums
-    @card_this_month                 = @records_this_month._card.sum(:payment)
-    @sum = @user.records._month(period[:from], period[:to]).sum(:payment)
+    @month_records = @records.where(date: Date.today.all_month)
+    @sum           = @month_records.sum(:payment)
+    @card_sum      = @month_records.where(card: true).sum(:payment)
+    @categories    = Category.all
   end
 
   def show
-    cutoff = @user.salary_date.cutoff
-    date = Date.new(params[:year].to_i, params[:month].to_i, cutoff)
-    @month_records = @user.records._month(date, (date.next_month - 1))
-    @salary        = @user.salaries._year(params[:year]).first
+    @sum    = @records
+    @salary = @user.salaries.find_by(:enable).first
   end
 
   private
+
+  def set_records
+    @records = @user.records
+  end
 
   def set_own_categories
     @categories = @user.categories._own

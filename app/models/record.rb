@@ -27,12 +27,6 @@ class Record < ActiveRecord::Base
   scope :_month,  lambda { |from, to| where(date: from..to) }
   scope :_card,   lambda { where(card: true) }
 
-  def month_records(year, month)
-    user = self.first.user
-    period = user.salary_date.period(year, month)
-    where(date: period[:from]..period[:to])
-  end
-
   def self.this_month
     today = Date.today
     { year: today.year, month: today.month}

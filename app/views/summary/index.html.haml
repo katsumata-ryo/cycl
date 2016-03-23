@@ -1,19 +1,5 @@
 %h2 SUMMARY: 集計
 
-/ .dropdown
-/   %button#dropdownMenu2.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-/     月を選択
-/     %span.caret
-/   %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu2"}
-/     %li
-/       = link_to "今月", summary_path
-/     %li.divider{:role => "separator"}
-/     - today = Date.today
-/     - (-4...5).each do |i|
-/       - date = today << -i
-/       %li
-/         = link_to "#{date.year}/#{date.month}", controller: "summary", action: "show", year: date.year, month: date.month
-
 %h3
   今月の集計
 %table.table
@@ -27,7 +13,7 @@
     %td.odd
       = number_to_currency(@salary.money - @sum)
     %td.odd
-      = number_to_currency(@card_this_month)
+      = number_to_currency(@card_sum)
 
 %h3
   カテゴリー別
@@ -37,11 +23,12 @@
     %th 支払
     %th 予算差引額
   - @categories.each do |category|
+    - category_sum = @month_records.where(category: category).sum(:payment)
     %tr
       - even_odd = cycle("even", "odd")
       %td{ class: even_odd}
         = category.name
       %td{ class: even_odd}
-        = number_to_currency(0)
+        = number_to_currency(category_sum)
       %td{ class: even_odd}
-        = number_to_currency(0)
+        = number_to_currency(category.budget - category_sum)
