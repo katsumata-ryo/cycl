@@ -9,12 +9,6 @@ machine:
     version:
       2.3.0
 
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: cycl
-
 #   # Override /etc/hosts
 #   hosts:
 #     circlehost: 127.0.0.1
