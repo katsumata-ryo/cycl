@@ -10,7 +10,7 @@ class SummaryController < ApplicationController
     @categories = Category.all
     @records_this_month              = @user.records._month(period[:from], period[:to])
     @records_this_month_for_category = @records_this_month.category_sums
-    @card_this_month                     = @records_this_month._card.sum(:payment)
+    @card_this_month                 = @records_this_month._card.sum(:payment)
     @sum = @user.records._month(period[:from], period[:to]).sum(:payment)
   end
 
@@ -28,6 +28,10 @@ class SummaryController < ApplicationController
   end
 
   def set_own_salary
-    @salary = @user.salaries.find_by(enable: true)
+    if @user.salaries.find_by(enable: true).present?
+      @salary = @user.salaries.find_by(enable: true)
+    else
+      redirect_to configs_path, notice: '有効な収入を設定してください'
+    end
   end
 end
