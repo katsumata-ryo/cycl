@@ -1,0 +1,371 @@
+@charset "UTF-8";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ */
+@import url(https://fonts.googleapis.com/css?family=Nunito:700,400,300);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+/* line 1, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_body.css.scss */
+body {
+  width: 98vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #fff;
+  font-weight: 300;
+  font-family: 'Nunito', 'Noto Sans JP', sans-serif, "游明朝体 ミディアム";
+  color: #666;
+  line-height: 150%;
+  font-size: 14px;
+}
+/* line 16, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_body.css.scss */
+body.welcome {
+  background-image: url("/img/bg-welcome.jpg");
+}
+/* line 20, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_body.css.scss */
+body.login {
+  background-image: url("/img/bg.jpg");
+}
+/* line 24, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_body.css.scss */
+body .wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* line 30, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_body.css.scss */
+body .wrapper .container {
+  padding: 0px;
+  width: 800px;
+  height: 98vh;
+}
+
+/* line 6, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.box-center, body .wrapper .container, table.table, .form-container, .globalmenu .menu, .globalmenu .signout {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 11, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.box-middle, .welcome_content, .content {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 20, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.text-center, table.table tr td {
+  text-align: center;
+}
+
+/* line 25, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.shadow, .btn, table.table.shadow {
+  box-shadow: 2px 2px 2px rgba(204, 204, 204, 0.4);
+}
+
+/* line 29, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.form-reset, .form-container .float-box table.form tr td input, .form-container .float-box table.form tr td select, .form-container .float-box table.form-memo tr td textarea {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border: 1px #ddd solid;
+}
+
+/* line 45, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.space-half {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 50, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.space-top-half {
+  margin-top: 20px;
+}
+
+/* line 54, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.space-bottom-half {
+  margin-bottom: 20px;
+}
+
+/* line 64, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.alert {
+  color: #900;
+}
+
+/* line 69, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+a {
+  text-decoration: none;
+  color: #666;
+}
+/* line 73, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+a:hover {
+  color: #999;
+}
+
+/* line 78, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.btn {
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  text-decoration: none;
+  padding: 5px 12px;
+  font-size: 90%;
+}
+/* line 87, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.btn.btn-normal {
+  width: 150px;
+  background-color: #92a8d1;
+  color: #fff;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  border: 0;
+  font-weight: lighter;
+}
+/* line 96, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.btn.btn-normal:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #666;
+}
+/* line 102, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.btn.btn-info {
+  width: 150px;
+  background-color: black;
+  color: #fff;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  border: 0;
+  font-weight: lighter;
+}
+/* line 111, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+.btn.btn-info:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #666;
+}
+
+/* line 118, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+p {
+  margin: 0;
+}
+
+/* line 124, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+h3 {
+  margin-top: 40px;
+  border-left: 4px solid #92a8d1;
+  padding-left: 5px;
+}
+
+/* line 130, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+h4 {
+  font-size: 120%;
+  padding-left: 5px;
+}
+
+/* line 141, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+table.table tr th {
+  width: 200px;
+  background-color: #cccccc;
+  color: #fff;
+  padding: 5px 0px 5px 0px;
+}
+/* line 147, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+table.table tr th.transparent {
+  background-color: transparent;
+}
+/* line 150, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+table.table tr th.icon {
+  width: 50px;
+}
+/* line 155, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+table.table tr td {
+  padding: 5px 0px 5px 0px;
+}
+/* line 159, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+table.table tr td.odd {
+  background-color: #fff;
+}
+/* line 163, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_defines.css.scss */
+table.table tr td.even {
+  background-color: #edf5f5;
+}
+
+/* line 5, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box table.form {
+  float: left;
+}
+/* line 9, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box table.form tr th {
+  width: 150px;
+  height: 20px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+/* line 16, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box table.form tr td {
+  width: 200px;
+}
+/* line 18, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box table.form tr td input {
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+}
+/* line 24, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box table.form tr td select {
+  height: 20px;
+  padding: 5px;
+}
+/* line 33, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box table.form-memo {
+  float: left;
+}
+/* line 36, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box table.form-memo tr {
+  vertical-align: top;
+}
+/* line 39, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box table.form-memo tr th {
+  width: 50px;
+}
+/* line 42, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box table.form-memo tr td {
+  width: 250px;
+  height: 100px;
+}
+/* line 46, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box table.form-memo tr td textarea {
+  width: 250px;
+  height: 75px;
+}
+/* line 55, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_form.css.scss */
+.form-container .float-box .actions {
+  clear: both;
+}
+
+/* line 3, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_global-menu.css.scss */
+.globalmenu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  margin: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+/* line 13, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_global-menu.css.scss */
+.globalmenu .menu, .globalmenu .signout {
+  width: auto;
+  height: 50px;
+  text-align: center;
+  margin-top: 15px;
+}
+/* line 20, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_global-menu.css.scss */
+.globalmenu .menu span, .globalmenu .signout span {
+  list-style-type: none;
+  margin: 0 50px 0 0;
+}
+/* line 24, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_global-menu.css.scss */
+.globalmenu .menu span a.menu, .globalmenu .signout span a.menu, .globalmenu .menu span a.signout, .globalmenu .signout span a.signout {
+  text-decoration: none;
+  color: #515151;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  font-size: 90%;
+}
+/* line 31, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_global-menu.css.scss */
+.globalmenu .menu span a.menu:hover, .globalmenu .signout span a.menu:hover, .globalmenu .menu span a.signout:hover, .globalmenu .signout span a.signout:hover {
+  color: #919191;
+}
+/* line 36, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_global-menu.css.scss */
+.globalmenu .menu span a.menu i.fa .fa-micro, .globalmenu .signout span a.menu i.fa .fa-micro, .globalmenu .menu span a.signout i.fa .fa-micro, .globalmenu .signout span a.signout i.fa .fa-micro {
+  font-size: 5px;
+}
+/* line 43, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_global-menu.css.scss */
+.globalmenu .signout {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+/* line 50, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/imports/_global-menu.css.scss */
+.globalmenu .signout span .fa {
+  margin-top: 20px;
+}
+
+/* line 5, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/home.css.scss */
+.welcome_content {
+  width: 411px;
+}
+/* line 9, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/home.css.scss */
+.welcome_content img.title {
+  width: 400px;
+}
+/* line 13, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/home.css.scss */
+.welcome_content img.description {
+  width: 400px;
+  margin: 10px;
+}
+/* line 18, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/home.css.scss */
+.welcome_content img.separater {
+  width: 400px;
+}
+/* line 21, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/home.css.scss */
+.welcome_content h1 {
+  font-weight: lighter;
+  line-height: 120%;
+  font-size: 30px;
+  color: #555;
+}
+/* line 27, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/home.css.scss */
+.welcome_content h1 strong {
+  font-size: 36px;
+  font-weight: bold;
+  color: #92a8d1;
+}
+
+/* line 35, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/home.css.scss */
+.bottom-space {
+  height: 75px;
+}
+
+/* line 1, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/devise.css.scss */
+.content {
+  width: 411px;
+}
+/* line 5, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/devise.css.scss */
+.content img.title {
+  width: 400px;
+}
+/* line 9, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/devise.css.scss */
+.content img.description {
+  width: 400px;
+  margin: 10px;
+}
+/* line 14, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/devise.css.scss */
+.content img.separater {
+  width: 400px;
+}
+/* line 17, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/devise.css.scss */
+.content h1 {
+  font-weight: lighter;
+  line-height: 120%;
+  font-size: 30px;
+  color: #555;
+}
+/* line 23, /Users/ryo/works/ryo/spendcycle/app/assets/stylesheets/devise.css.scss */
+.content h1 strong {
+  font-size: 36px;
+  font-weight: bold;
+  color: #92a8d1;
+}

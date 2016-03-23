@@ -18,6 +18,3 @@
 
 # Ignore coverage
 coverage/
-
-# assets
-public/assets/*
