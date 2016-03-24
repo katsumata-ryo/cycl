@@ -33,5 +33,11 @@ body{
       height: 98vh;
       @extend .box-center;
     }
+
+    .welcome_container{
+      padding: 0px;
+      width: 98vw;
+      height: 98vh;
+    }
   }
 }
