@@ -4,7 +4,7 @@ class SummaryController < ApplicationController
   before_action :set_own_categories, :set_own_salary, :set_records
 
   def index
-    @month_records = @records.where(date: Date.today.all_month)
+    @month_records = @records.where(date: this_month_range)
     @sum           = @month_records.sum(:payment)
     @card_sum      = @month_records.where(card: true).sum(:payment)
     @categories    = Category.all
@@ -16,6 +16,19 @@ class SummaryController < ApplicationController
   end
 
   private
+
+  def this_month_range
+    day = 10
+
+    today = Date.today
+    from = Date.new(today.year, today.month, day)
+    if today.month == 12
+      to = Date.new(today.next_month.year, today.next_month, day)
+    else
+      to = Date.new(today.year, today.next_month.month, day)
+    end
+    (from...to)
+  end
 
   def set_records
     @records = @user.records
