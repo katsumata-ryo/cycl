@@ -1,22 +1,23 @@
-.content.text-center
-  %h2 LOGIN
+.welcome_content
+  %h3 LOGIN
 
-  利用するにはログインが必要です。
+  %p.text-center
+    利用するにはログインが必要です。
 
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field.space-half
+    .field.space-half.text-center
       メールアドレス
       %br/
       = f.email_field :email, autofocus: true
 
-    .field.space-half
+    .field.space-half.text-center
       パスワード
       %br/
       = f.password_field :password, autocomplete: "off"
 
     - if devise_mapping.rememberable?
-      .field
+      .field.text-center
         = f.check_box :remember_me
         パスワードを記憶する
-    .actions.space-half
+    .actions.space-half.text-center
       = f.submit "ログイン"
