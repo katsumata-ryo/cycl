@@ -7,7 +7,7 @@ class SummaryController < ApplicationController
     @month_records = @records.where(date: this_month_range(Date.today))
     @sum           = @month_records.sum(:payment)
     @card_sum      = @month_records.where(card: true).sum(:payment)
-    @categories    = Category.all
+    @categories    = @user.categories
   end
 
   def show
