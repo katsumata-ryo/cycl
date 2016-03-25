@@ -52,7 +52,7 @@ class RecordsController < ApplicationController
 
     respond_to do |format|
       if @record.save
-        format.html { redirect_to @record, notice: '新しい支払いを追加しました' }
+        format.html { redirect_to records_path, notice: '新しい支払いを追加しました' }
       else
         format.html { render :new }
       end
@@ -64,7 +64,7 @@ class RecordsController < ApplicationController
   def update
     respond_to do |format|
       if @record.update(record_params)
-        format.html { redirect_to @record, notice: '支払いを更新しました' }
+        format.html { redirect_to records_path, notice: '支払いを更新しました' }
       else
         format.html { render :edit }
       end
@@ -76,7 +76,7 @@ class RecordsController < ApplicationController
   def destroy
     @record.destroy
     respond_to do |format|
-      format.html { redirect_to records_url, notice: '支払いを削除しました' }
+      format.html { redirect_to records_path, notice: '支払いを削除しました' }
     end
   end
 
