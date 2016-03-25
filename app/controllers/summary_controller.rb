@@ -4,7 +4,7 @@ class SummaryController < ApplicationController
   before_action :set_own_categories, :set_own_salary, :set_records
 
   def index
-    @month_records = @records.where(date: this_month_range)
+    @month_records = @records.where(date: this_month_range(Date.today))
     @sum           = @month_records.sum(:payment)
     @card_sum      = @month_records.where(card: true).sum(:payment)
     @categories    = Category.all
@@ -17,17 +17,28 @@ class SummaryController < ApplicationController
 
   private
 
-  def this_month_range
-    day = 10
+  # Todo: RecordControllerと重複、あとで別クラスのモデルへ
+  def this_month_range(date)
+    @date        = date
+    @salary_date = 10
 
-    today = Date.today
-    from = Date.new(today.year, today.month, day)
-    if today.month == 12
-      to = Date.new(today.next_month.year, today.next_month, day)
+    from_date...to_date
+  end
+
+  def from_date
+    if @date.day >= @salary_date
+      Date.new(@date.year, @date.month, @salary_date)
     else
-      to = Date.new(today.year, today.next_month.month, day)
+      Date.new(@date.last_month.year, @date.last_month.month, @salary_date)
     end
-    (from...to)
+  end
+
+  def to_date
+    if @date.month == 12
+      Date.new(@date.next_month.year, @date.next_month.month, @salary_date)
+    else
+      Date.new(@date.year, @date.next_month.month, @salary_date)
+    end
   end
 
   def set_records

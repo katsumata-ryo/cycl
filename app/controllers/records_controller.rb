@@ -17,7 +17,7 @@ class RecordsController < ApplicationController
   # devise
   before_action :authenticate_user!
 
-  before_action :set_record, only: [:show, :edit, :update, :destroy]
+  before_action :set_record, only: [:edit, :update, :destroy]
   before_action :set_own_categories, only: [:new, :create, :edit, :update, :bulk, :bulk_create]
   before_action :set_user_latest_record, only: [:index]
 
@@ -29,6 +29,11 @@ class RecordsController < ApplicationController
   # GET /records/1
   # GET /records/1.json
   def show
+    @year  = params[:year].to_i
+    @month = params[:month].to_i
+    date = Date.new(@year, @month, 10)
+
+    @records = @user.records.where(date: this_month_range(date))
   end
 
   # GET /records/new
@@ -105,6 +110,31 @@ class RecordsController < ApplicationController
   end
 
   private
+
+  # TODO: summary_controllerと重複
+  def this_month_range(date)
+    @date        = date
+    @salary_date = 10
+
+    from_date...to_date
+  end
+
+  def from_date
+    if @date.day >= @salary_date
+      Date.new(@date.year, @date.month, @salary_date)
+    else
+      Date.new(@date.last_month.year, @date.last_month.month, @salary_date)
+    end
+  end
+
+  def to_date
+    if @date.month == 12
+      Date.new(@date.next_month.year, @date.next_month.month, @salary_date)
+    else
+      Date.new(@date.year, @date.next_month.month, @salary_date)
+    end
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user_latest_record
       @user_latest_record = @user.records._latest

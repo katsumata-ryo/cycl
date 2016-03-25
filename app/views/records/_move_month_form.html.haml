@@ -1,0 +1,9 @@
+%select{name: "moveMonthPage"}
+  - select_month_values.each do |date|
+    - if this_page?(date)
+      %option{value: "/records/#{date.year}/#{date.month}", selected: "selected"}
+        = "#{date.year}年#{date.month}月"
+    - else
+      %option{value: "/records/#{date.year}/#{date.month}"}
+        = "#{date.year}年#{date.month}月"
+%input{type: "button", id: "location", value: "移動"}
