@@ -19,6 +19,6 @@
 
   %div.signout
     %span
-      = link_to destroy_user_session_path, class: "menu" do
+      = link_to destroy_user_session_path, method: :delete, class: "menu" do
         %i.fa.fa-sign-out
         ログアウト
