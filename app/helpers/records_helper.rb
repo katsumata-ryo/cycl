@@ -14,4 +14,16 @@
 #
 
 module RecordsHelper
+  def select_month_values
+    today = Date.today
+    (-5..6).collect{|i| today.months_since(i)}
+  end
+
+  def this_page?(date)
+    if @month.present?
+      date.month == @month.to_i
+    else
+      date == Date.today
+    end
+  end
 end
