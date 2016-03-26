@@ -5,6 +5,7 @@
 $ ->
 
   # セレクトボックスでのページ遷移
-  $('#location').click ->
+  $(document).on('click', '#location', ->
     if $(this).val() != ''
       window.location.href = $('select[name=moveMonthPage]').val();
+  )
