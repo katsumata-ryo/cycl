@@ -16,6 +16,12 @@
 @import "home";
 @import "devise";
 
+// Responsive Style
+@import "responsive/smartphone";
+@import "responsive/display";
+
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Nunito:700,400,300);
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+

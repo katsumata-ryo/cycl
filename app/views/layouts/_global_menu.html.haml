@@ -1,4 +1,4 @@
-.globalmenu
+.globalmenu.display
   .menu
     %span
       = link_to root_url, class: "menu" do
@@ -22,3 +22,25 @@
       = link_to destroy_user_session_path, method: :delete, class: "menu" do
         %i.fa.fa-sign-out
         ログアウト
+
+/ mobile
+
+.globalmenu.mobile
+  .menu
+    %span
+      = link_to root_url, class: "menu" do
+        %i.fa.fa-home
+    %span
+      = link_to new_record_path, class: "menu" do
+        %i.fa.fa-plus
+    %span
+      = link_to records_path, class: "menu" do
+        %i.fa.fa-table
+    %span
+      = link_to configs_path, class: "menu" do
+        %i.fa.fa-cog
+
+  %div.signout
+    %span
+      = link_to destroy_user_session_path, method: :delete, class: "menu" do
+        %i.fa.fa-sign-out
