@@ -1,0 +1,107 @@
+@media screen and (max-width: 640px) {
+
+  .mBoxCenter {
+    margin: 0 auto;
+  }
+
+  .mBoxCenterMiddle {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .mTextCenter {
+    text-align: center;
+  }
+
+  body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #fff;
+    font-weight: 300;
+    font-family: 'Nunito', 'Noto Sans JP', sans-serif, "游明朝体 ミディアム";
+    color: #666;
+    line-height: 150%;
+    font-size: 14px;
+
+    .wrapper{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+
+      .container{
+        margin:5%;
+        padding: 0px;
+        width: 90%;
+        height: 98vh;
+
+        .content {
+          margin: 5%;
+        }
+      }
+
+      .welcome_container{
+        padding: 0;
+        width: 100%;
+
+        .welcome_content {
+          width: 80%;
+          @extend .mBoxCenterMiddle;
+
+          img.title{
+            width: 100%;
+          }
+
+          img.description{
+            width: 100%;
+            margin: 10px;
+          }
+
+          p {
+            img {
+              width: 100%;
+            }
+          }
+
+          h1 {
+            font-weight: lighter;
+            line-height: 120%;
+            font-size: 30px;
+            color: $c_normal;
+
+            strong {
+              font-size: 36px;
+              font-weight: bold;
+              color: $c_title;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .display {
+    display: none;
+  }
+
+  .globalmenu {
+    .menu {
+      span {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .actions {
+    @extend .mTextCenter ;
+  }
+}
