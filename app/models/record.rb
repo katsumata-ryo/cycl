@@ -23,7 +23,6 @@ class Record < ActiveRecord::Base
   validates_numericality_of :payment
   validates :card, inclusion: { in: [true, false] }
 
-  scope :_latest, lambda { order(:updated_at).reverse_order.limit(15) }
   scope :_month,  lambda { |from, to| where(date: from..to) }
   scope :_card,   lambda { where(card: true) }
 

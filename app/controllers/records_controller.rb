@@ -33,7 +33,7 @@ class RecordsController < ApplicationController
     @month = params[:month].to_i
     date = Date.new(@year, @month, 10)
 
-    @records = @user.records.where(date: this_month_range(date))
+    @records = @user.records.where(date: this_month_range(date)).page(params[:page]).per(10)
   end
 
   # GET /records/new
@@ -137,7 +137,7 @@ class RecordsController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_user_latest_record
-      @user_latest_record = @user.records._latest
+      @records = @user.records.order(:updated_at).reverse_order.page(params[:page]).per(10)
     end
 
     def set_record

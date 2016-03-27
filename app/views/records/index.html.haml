@@ -19,7 +19,7 @@
       %th 削除
 
   %tbody
-    - @user_latest_record.each do |record|
+    - @records.each do |record|
       %tr
         - even_odd = cycle("even", "odd")
         %td{ class: even_odd}
@@ -34,3 +34,5 @@
           = link_to content_tag(:i, '', class: 'fa fa-pencil'), edit_record_path(record)
         %td{ class: even_odd}
           = link_to content_tag(:i, '', class: 'fa fa-remove'), record, :method => :delete, :data => { :confirm => '削除します、よろしいですか?' }
+
+= paginate @records
