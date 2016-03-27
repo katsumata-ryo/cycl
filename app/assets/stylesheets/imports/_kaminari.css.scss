@@ -1,0 +1,20 @@
+nav.pagination{
+  margin: 10px 0;
+  text-align: center;
+
+  span{
+    color: #999;
+    padding: 3px;
+
+    &.first { }
+    &.prev {}
+    &.next {}
+    &.last {}
+    &.page.gap {}
+    &.current {
+      font-weight: bold;
+      color: #333;
+    }
+  }
+}
+

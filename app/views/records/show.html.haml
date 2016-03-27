@@ -29,6 +29,8 @@
         %td{ class: even_odd}
           = link_to content_tag(:i, '', class: 'fa fa-remove'), record, :method => :delete, :data => { :confirm => '削除します、よろしいですか?' }
 
+= paginate @records
+
 %h3 違う月を見る
 
 = render partial: 'records/move_month_form'
