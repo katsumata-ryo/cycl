@@ -11,6 +11,9 @@
   - bgimg = user_signed_in? ? 'login' : 'welcome'
   %body{ class: bgimg }
     .wrapper
+      - if notice
+        %p#notice
+          = "お知らせ: #{notice}"
       %header
         - if user_signed_in?
           .container
