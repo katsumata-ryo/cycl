@@ -43,7 +43,8 @@ class SalariesController < ApplicationController
 
     respond_to do |format|
       if @salary.save
-        format.html { redirect_to configs_path, notice: '新しい給料情報を追加しました' }
+        flash[:success] = '新しい給料情報を追加しました'
+        format.html { redirect_to configs_path }
       else
         format.html { render :new }
       end
@@ -55,7 +56,8 @@ class SalariesController < ApplicationController
   def update
     respond_to do |format|
       if @salary.update(salary_params)
-        format.html { redirect_to configs_path, notice: '給料情報を更新しました' }
+        flash[:success] = '給料情報を更新しました'
+        format.html { redirect_to configs_path }
       else
         format.html { render :edit }
       end
@@ -67,7 +69,8 @@ class SalariesController < ApplicationController
   def destroy
     @salary.destroy
     respond_to do |format|
-      format.html { redirect_to configs_path, notice: '給料情報を削除しました' }
+      flash[:success] = '給料情報を削除しました'
+      format.html { redirect_to configs_path }
     end
   end
 
