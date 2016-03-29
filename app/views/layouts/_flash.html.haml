@@ -1,0 +1,4 @@
+- if flash
+  - flash.each do |type, msg|
+    %p{ class: "flash #{type}" }
+      = "お知らせ: #{msg}"
