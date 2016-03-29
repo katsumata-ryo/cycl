@@ -44,7 +44,8 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to configs_path, notice: "新しいカテゴリー(#{@category.name})を追加しました" }
+        flash[:seccess] = "新しいカテゴリー(#{@category.name})を追加しました"
+        format.html { redirect_to configs_path }
       else
         format.html { render :new }
       end
@@ -56,7 +57,8 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to configs_path, notice: "#{@category.name}を更新しました" }
+        flash[:success] = "#{@category.name}を更新しました"
+        format.html { redirect_to configs_path }
       else
         format.html { render :edit }
       end
@@ -68,7 +70,8 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
     respond_to do |format|
-      format.html { redirect_to configs_path, notice: "カテゴリー(#{@category.name})を削除しました" }
+      flash[:success] = "カテゴリー(#{@category.name})を削除しました"
+      format.html { redirect_to configs_path }
     end
   end
 

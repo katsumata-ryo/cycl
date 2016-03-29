@@ -11,6 +11,7 @@
   - bgimg = user_signed_in? ? 'login' : 'welcome'
   %body{ class: bgimg }
     .wrapper
+      = render partial: 'layouts/flash'
       %header
         - if user_signed_in?
           .container
