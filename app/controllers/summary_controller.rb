@@ -34,10 +34,10 @@ class SummaryController < ApplicationController
   end
 
   def to_date
-    if @date.month == 12
+    if @date.day >= @salary_date
       Date.new(@date.next_month.year, @date.next_month.month, @salary_date)
     else
-      Date.new(@date.year, @date.next_month.month, @salary_date)
+      Date.new(@date.year, @date.month, @salary_date)
     end
   end
 
