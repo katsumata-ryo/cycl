@@ -21,32 +21,16 @@ class RecordsController < ApplicationController
   before_action :set_own_categories, only: [:new, :create, :edit, :update, :bulk, :bulk_create]
   before_action :set_user_latest_record, only: [:index]
 
-  # GET /records
-  # GET /records.json
   def index
   end
 
-  # GET /records/1
-  # GET /records/1.json
-  def show
-    @year  = params[:year].to_i
-    @month = params[:month].to_i
-    date = Date.new(@year, @month, 10)
-
-    @records = @user.records.where(date: this_month_range(date)).page(params[:page]).per(10)
-  end
-
-  # GET /records/new
   def new
     @record = Record.new
   end
 
-  # GET /records/1/edit
   def edit
   end
 
-  # POST /records
-  # POST /records.json
   def create
     @record = Record.new(record_params)
 
@@ -60,8 +44,6 @@ class RecordsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /records/1
-  # PATCH/PUT /records/1.json
   def update
     respond_to do |format|
       if @record.update(record_params)
@@ -73,8 +55,6 @@ class RecordsController < ApplicationController
     end
   end
 
-  # DELETE /records/1
-  # DELETE /records/1.json
   def destroy
     @record.destroy
     respond_to do |format|
@@ -83,11 +63,9 @@ class RecordsController < ApplicationController
     end
   end
 
-  # GET bulk/:number
   def bulk
   end
 
-  # POST bulk
   def bulk_create
     records = []
 
@@ -138,7 +116,6 @@ class RecordsController < ApplicationController
     end
   end
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_user_latest_record
       @records = @user.records.order(:updated_at).reverse_order.page(params[:page]).per(10)
     end
@@ -148,10 +125,9 @@ class RecordsController < ApplicationController
     end
 
     def set_own_categories
-      # @own_categories = Category.where("user_id = #{current_user.id}")
       @own_categories = Category._own
     end
-    # Never trust parameters from the scary internet, only allow the white list through.
+
     def record_params
       params.require(:record).permit(:payment, :date, :category_id, :card, :memo, :user_id)
     end
