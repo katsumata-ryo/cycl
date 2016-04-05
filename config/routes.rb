@@ -7,10 +7,12 @@ Rails.application.routes.draw do
 
   resources :salaries
 
-  resources :records
-  get 'records/:year/:month', to: 'records#show'
-  get 'records/bulk/:number', to: 'records#bulk'
-  post 'records/bulk_create', to: 'records#bulk_create'
+  resources :records, only: [:index, :new, :edit, :update, :create, :destroy]
+  namespace :records do
+    resources :years, only: [] do
+      resources :months, only: [:show]
+    end
+  end
 
   resources :configs, only: ['index']
   resources :salaries, only: ['new', 'edit', 'update', 'create', 'destroy']
