@@ -25,6 +25,13 @@ class Record < ActiveRecord::Base
 
   scope :_month,  lambda { |from, to| where(date: from..to) }
   scope :_card,   lambda { where(card: true) }
+  scope :payments, -> { where(payment: true) }
+  scope :incomes, -> { where(payment: false) }
+  scope :month_of, lambda { |year, month|
+    begining_of_month = Date.new(year, month, 1)
+    end_of_month      = begining_of_month.end_of_month
+    where(date: begining_of_month..end_of_month)
+  }
 
   def self.this_month
     today = Date.today
