@@ -21,6 +21,7 @@ records_01:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ1"
   category_id: 1
   user_id: 1
@@ -30,6 +31,7 @@ records_02:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ2"
   category_id: 2
   user_id: 1
@@ -39,6 +41,7 @@ records_03:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ3"
   category_id: 3
   user_id: 1
@@ -48,6 +51,7 @@ records_04:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ4"
   category_id: 4
   user_id: 1
@@ -57,6 +61,7 @@ records_05:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ5"
   category_id: 5
   user_id: 1
@@ -66,6 +71,7 @@ records_06:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ6"
   category_id: 6
   user_id: 1
@@ -75,6 +81,7 @@ records_07:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ7"
   category_id: 7
   user_id: 1
@@ -84,6 +91,7 @@ records_08:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ8"
   category_id: 8
   user_id: 1
@@ -93,6 +101,7 @@ records_09:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ9"
   category_id: 9
   user_id: 1
@@ -102,6 +111,7 @@ records_10:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ10"
   category_id: 10
   user_id: 1
@@ -111,6 +121,7 @@ records_11:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ11"
   category_id: 11
   user_id: 1
@@ -120,6 +131,7 @@ records_12:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ12"
   category_id: 12
   user_id: 1
@@ -129,6 +141,7 @@ records_13:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ13"
   category_id: 13
   user_id: 1
@@ -138,6 +151,7 @@ records_14:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ14"
   category_id: 14
   user_id: 1
@@ -147,6 +161,7 @@ records_15:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ15"
   category_id: 15
   user_id: 1
@@ -156,6 +171,7 @@ records_16:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ16"
   category_id: 16
   user_id: 1
@@ -165,6 +181,7 @@ records_17:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ17"
   category_id: 17
   user_id: 1
@@ -174,6 +191,7 @@ records_18:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ18"
   category_id: 18
   user_id: 1
@@ -183,6 +201,7 @@ records_19:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ19"
   category_id: 19
   user_id: 1
@@ -192,6 +211,7 @@ records_20:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ20"
   category_id: 20
   user_id: 1
@@ -201,6 +221,7 @@ records_21:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ21"
   category_id: 1
   user_id: 2
@@ -210,6 +231,7 @@ records_22:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ22"
   category_id: 2
   user_id: 2
@@ -219,6 +241,7 @@ records_23:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ23"
   category_id: 3
   user_id: 2
@@ -228,6 +251,7 @@ records_24:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ24"
   category_id: 4
   user_id: 2
@@ -237,6 +261,7 @@ records_25:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ25"
   category_id: 5
   user_id: 2
@@ -246,6 +271,7 @@ records_26:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ26"
   category_id: 6
   user_id: 2
@@ -255,6 +281,7 @@ records_27:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ27"
   category_id: 7
   user_id: 2
@@ -264,6 +291,7 @@ records_28:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ28"
   category_id: 8
   user_id: 2
@@ -273,6 +301,7 @@ records_29:
   money: 1000
   date: 2016-02-01
   card: true
+  payment: true
   memo: "サンプルデータ29"
   category_id: 9
   user_id: 2
@@ -282,6 +311,7 @@ records_30:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ30"
   category_id: 10
   user_id: 2
@@ -291,6 +321,7 @@ records_31:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ31"
   category_id: 11
   user_id: 2
@@ -300,6 +331,7 @@ records_32:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ32"
   category_id: 12
   user_id: 2
@@ -309,6 +341,7 @@ records_33:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ33"
   category_id: 13
   user_id: 2
@@ -318,6 +351,7 @@ records_34:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ34"
   category_id: 14
   user_id: 2
@@ -327,6 +361,7 @@ records_35:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ35"
   category_id: 15
   user_id: 2
@@ -336,6 +371,7 @@ records_36:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ36"
   category_id: 16
   user_id: 2
@@ -345,6 +381,7 @@ records_37:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ37"
   category_id: 17
   user_id: 2
@@ -354,6 +391,7 @@ records_38:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ38"
   category_id: 18
   user_id: 2
@@ -363,6 +401,7 @@ records_39:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ39"
   category_id: 19
   user_id: 2
@@ -372,6 +411,7 @@ records_40:
   money: 1000
   date: 2016-01-02
   card: false
+  payment: true
   memo: "サンプルデータ40"
   category_id: 20
   user_id: 2
