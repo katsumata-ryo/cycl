@@ -63,33 +63,6 @@ class RecordsController < ApplicationController
     end
   end
 
-  def bulk
-  end
-
-  def bulk_create
-    records = []
-
-    0.upto(params['bulk']['number'].to_i - 1) do |n|
-      date = Date.new(params['bulk']["date#{n}"]["d(1i)"].to_i, params['bulk']["date#{n}"]["d(2i)"].to_i, params['bulk']["date#{n}"]["d(3i)"].to_i)
-
-      records << Record.new(
-        money:     params['bulk']['money'],
-        date:        date,
-        category_id: params['bulk']['category_id'],
-        card:        params['bulk']['card'],
-        memo:        params['bulk']['memo'],
-        user_id:     params['bulk']['user_id'],
-      )
-    end
-
-    result = Record.import(records)
-    if result['failed_instances'].empty?
-      redirect_to records_url, notice: "#{params['bulk']['number']}件のレコードを登録しました"
-    else
-      redirect_to records_url, notice: "レコードの登録に失敗しました、レコードを確認して下さい: #{result['failed_instances'].map{|f| f.date}.join("と")}が失敗"
-    end
-  end
-
   private
 
   # TODO: summary_controllerと重複
@@ -116,19 +89,19 @@ class RecordsController < ApplicationController
     end
   end
 
-    def set_user_latest_record
-      @records = @user.records.order(:updated_at).reverse_order.page(params[:page]).per(10)
-    end
+  def set_user_latest_record
+    @records = @user.records.order(:updated_at).reverse_order.page(params[:page]).per(10)
+  end
 
-    def set_record
-      @record = Record.find(params[:id])
-    end
+  def set_record
+    @record = Record.find(params[:id])
+  end
 
-    def set_own_categories
-      @own_categories = Category._own
-    end
+  def set_own_categories
+    @own_categories = Category._own
+  end
 
-    def record_params
-      params.require(:record).permit(:money, :date, :category_id, :card, :memo, :user_id)
-    end
+  def record_params
+    params.require(:record).permit(:money, :date, :category_id, :card, :memo, :user_id, :payment)
+  end
 end
