@@ -3,7 +3,7 @@
 # Table name: records
 #
 #  id          :integer          not null, primary key
-#  payment     :integer
+#  money     :integer
 #  date        :date
 #  card        :boolean
 #  memo        :text
@@ -33,7 +33,7 @@ class RecordsControllerTest < ActionController::TestCase
 
   test "should create record" do
     assert_difference('Record.count') do
-      post :create, record: { card: @record.card, category: @record.category, date: @record.date, memo: @record.memo, payment: @record.payment }
+      post :create, record: { card: @record.card, category: @record.category, date: @record.date, memo: @record.memo, money: @record.money }
     end
 
     assert_redirected_to record_path(assigns(:record))
@@ -50,7 +50,7 @@ class RecordsControllerTest < ActionController::TestCase
   end
 
   test "should update record" do
-    patch :update, id: @record, record: { card: @record.card, category: @record.category, date: @record.date, memo: @record.memo, payment: @record.payment }
+    patch :update, id: @record, record: { card: @record.card, category: @record.category, date: @record.date, memo: @record.memo, money: @record.money }
     assert_redirected_to record_path(assigns(:record))
   end
 

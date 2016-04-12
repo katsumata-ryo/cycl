@@ -3,7 +3,7 @@
 # Table name: records
 #
 #  id          :integer          not null, primary key
-#  payment     :integer
+#  money     :integer
 #  date        :date
 #  card        :boolean
 #  memo        :text
@@ -73,7 +73,7 @@ class RecordsController < ApplicationController
       date = Date.new(params['bulk']["date#{n}"]["d(1i)"].to_i, params['bulk']["date#{n}"]["d(2i)"].to_i, params['bulk']["date#{n}"]["d(3i)"].to_i)
 
       records << Record.new(
-        payment:     params['bulk']['payment'],
+        money:     params['bulk']['money'],
         date:        date,
         category_id: params['bulk']['category_id'],
         card:        params['bulk']['card'],
@@ -129,6 +129,6 @@ class RecordsController < ApplicationController
     end
 
     def record_params
-      params.require(:record).permit(:payment, :date, :category_id, :card, :memo, :user_id)
+      params.require(:record).permit(:money, :date, :category_id, :card, :memo, :user_id)
     end
 end

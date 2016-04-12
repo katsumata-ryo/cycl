@@ -3,7 +3,7 @@
 # Table name: records
 #
 #  id          :integer          not null, primary key
-#  payment     :integer
+#  money     :integer
 #  date        :date
 #  card        :boolean
 #  memo        :text

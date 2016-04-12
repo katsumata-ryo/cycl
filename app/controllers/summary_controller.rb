@@ -5,8 +5,8 @@ class SummaryController < ApplicationController
 
   def index
     @month_records = @records.where(date: this_month_range(Date.today))
-    @sum           = @month_records.sum(:payment)
-    @card_sum      = @month_records.where(card: true).sum(:payment)
+    @sum           = @month_records.sum(:money)
+    @card_sum      = @month_records.where(card: true).sum(:money)
     @categories    = @user.categories
   end
 

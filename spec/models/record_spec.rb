@@ -3,7 +3,7 @@
 # Table name: records
 #
 #  id          :integer          not null, primary key
-#  payment     :integer
+#  money     :integer
 #  date        :date
 #  card        :boolean
 #  memo        :text
@@ -19,7 +19,7 @@ describe Record do
   describe "test" do
     before do
       record             = Record.new
-      record.payment     = 0
+      record.money     = 0
       record.date        = Date.today
       record.category_id = 1
       record.card        = false
@@ -30,7 +30,7 @@ describe Record do
 
     context "normal case." do
       it "not null" do
-        expect(@record.payment).not_to be_nil
+        expect(@record.money).not_to be_nil
       end
 
       it "card is require boolean" do
@@ -40,9 +40,9 @@ describe Record do
     end
 
     context "error case." do
-      it "is invalid payment value" do
+      it "is invalid money value" do
         ["test", nil].each do |value|
-          @record.payment = value
+          @record.money = value
           expect(@record.save).to be_falsey
         end
       end

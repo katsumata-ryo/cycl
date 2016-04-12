@@ -3,7 +3,7 @@
 # Table name: records
 #
 #  id          :integer          not null, primary key
-#  payment     :integer
+#  money     :integer
 #  date        :date
 #  card        :boolean
 #  memo        :text
@@ -19,8 +19,8 @@ class Record < ActiveRecord::Base
   belongs_to :user
 
   # validation
-  validates_presence_of :payment, :category_id
-  validates_numericality_of :payment
+  validates_presence_of :money, :category_id
+  validates_numericality_of :money
   validates :card, inclusion: { in: [true, false] }
 
   scope :_month,  lambda { |from, to| where(date: from..to) }
@@ -39,7 +39,7 @@ class Record < ActiveRecord::Base
   def self.category_sums
     sums = {}
     self.pluck(:category_id).each do |category|
-      sums[category] = self.where(category: category).sum(:payment)
+      sums[category] = self.where(category: category).sum(:money)
     end
     sums.sort
   end
