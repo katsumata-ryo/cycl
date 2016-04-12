@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  income: 1
+  date: 2016-04-03
+
+two:
+  income: 1
+  date: 2016-04-03

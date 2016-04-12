@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'incomes/income'
+
+  get 'incomes/date'
+
+  get 'incomes/memo'
+
+  get 'incomes/category_id'
+
+  get 'incomes/user_id'
+
   authenticated :user do
     root :to => "summary#index", :as => "user_authenticated_root"
   end
