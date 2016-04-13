@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  name       :string
 #  monthly    :boolean
+#  payment    :boolean
 #  budget     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -17,6 +18,7 @@ category_1:
   id: 1
   name: "自炊"
   monthly: false
+  payment: true
   budget: 20000
   user_id: 1
 
@@ -24,6 +26,7 @@ category_2:
   id: 2
   name: "外食"
   monthly: false
+  payment: true
   budget: 20000
   user_id: 1
 
@@ -31,6 +34,7 @@ category_3:
   id: 3
   name: "飲み会"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1
 
@@ -38,6 +42,7 @@ category_4:
   id: 4
   name: "日用品"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1
 
@@ -45,6 +50,7 @@ category_5:
   id: 5
   name: "娯楽費"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1
 
@@ -52,6 +58,7 @@ category_6:
   id: 6
   name: "写真"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1
 
@@ -59,6 +66,7 @@ category_7:
   id: 7
   name: "服飾"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1
 
@@ -66,6 +74,7 @@ category_8:
   id: 8
   name: "書籍"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1
 
@@ -73,6 +82,7 @@ category_9:
   id: 9
   name: "IT"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1
 
@@ -80,6 +90,7 @@ category_10:
   id: 10
   name: "交通費"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1
 
@@ -87,6 +98,7 @@ category_11:
   id: 11
   name: "残業代"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1
 
@@ -94,6 +106,7 @@ category_12:
   id: 12
   name: "その他"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1
 
@@ -101,6 +114,7 @@ category_13:
   id: 13
   name: "電気代"
   monthly: true
+  payment: true
   budget: 3000
   user_id: 1
 
@@ -108,6 +122,7 @@ category_14:
   id: 14
   name: "ガス代"
   monthly: true
+  payment: true
   budget: 3000
   user_id: 1
 
@@ -115,6 +130,7 @@ category_15:
   id: 15
   name: "水道代"
   monthly: true
+  payment: true
   budget: 2000
   user_id: 1
 
@@ -122,6 +138,7 @@ category_16:
   id: 16
   name: "インターネット"
   monthly: true
+  payment: true
   budget: 4000
   user_id: 1
 
@@ -129,6 +146,7 @@ category_17:
   id: 17
   name: "携帯"
   monthly: true
+  payment: true
   budget: 7000
   user_id: 1
 
@@ -136,6 +154,7 @@ category_18:
   id: 18
   name: "家賃"
   monthly: true
+  payment: true
   budget: 61000
   user_id: 1
 
@@ -143,6 +162,7 @@ category_19:
   id: 19
   name: "定期預金"
   monthly: true
+  payment: true
   budget: 20000
   user_id: 1
 
@@ -150,5 +170,6 @@ category_20:
   id: 20
   name: "コーヒー"
   monthly: false
+  payment: true
   budget: 0
   user_id: 1

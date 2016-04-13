@@ -21,6 +21,7 @@ class Category < ActiveRecord::Base
   validates_numericality_of :budget
   validates :budget, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :monthly, inclusion: { in: [true, false] }
+  validates :payment, inclusion: { in: [true, false] }
 
   # Scopes
   scope :_own, lambda { where( user_id: first.user_id) }
