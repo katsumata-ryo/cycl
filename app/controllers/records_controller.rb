@@ -100,6 +100,6 @@ class RecordsController < ApplicationController
   end
   # Never trust parameters from the scary internet, only allow the white list through.
   def record_params
-    params.require(:record).permit(:payment, :date, :category_id, :card, :memo, :user_id)
+    params.require(:record).permit(:money, :date, :category_id, :card, :memo, :user_id)
   end
 end

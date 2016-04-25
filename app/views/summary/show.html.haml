@@ -19,7 +19,7 @@
   総支出
 %p
   ￥
-  = @month_records.sum(:payment)
+  = @month_records.sum(:money)
 
 %h2
   残額
@@ -31,7 +31,7 @@
   クレジットカード
 %p
   ￥
-  = @month_records.where(card: true).sum(:payment)
+  = @month_records.where(card: true).sum(:money)
 %h2
   カテゴリーごと
 
@@ -46,7 +46,7 @@
         = @categories.find_by_id(category_id).name
       %td
         ￥
-        = @month_records.where(category_id: category_id).sum(:payment)
+        = @month_records.where(category_id: category_id).sum(:money)
       %td
         ￥
-        = @categories.find_by_id(category_id).budget - @month_records.where(category_id: category_id).sum(:payment)
+        = @categories.find_by_id(category_id).budget - @month_records.where(category_id: category_id).sum(:money)

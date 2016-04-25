@@ -18,7 +18,7 @@
 
 records_01:
   id: 1
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ1"
@@ -27,7 +27,7 @@ records_01:
 
 records_02:
   id: 2
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ2"
@@ -36,7 +36,7 @@ records_02:
 
 records_03:
   id: 3
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ3"
@@ -45,7 +45,7 @@ records_03:
 
 records_04:
   id: 4
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ4"
@@ -54,7 +54,7 @@ records_04:
 
 records_05:
   id: 5
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ5"
@@ -63,7 +63,7 @@ records_05:
 
 records_06:
   id: 6
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ6"
@@ -72,7 +72,7 @@ records_06:
 
 records_07:
   id: 7
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ7"
@@ -81,7 +81,7 @@ records_07:
 
 records_08:
   id: 8
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ8"
@@ -90,7 +90,7 @@ records_08:
 
 records_09:
   id: 9
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ9"
@@ -99,7 +99,7 @@ records_09:
 
 records_10:
   id: 10
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ10"
@@ -108,7 +108,7 @@ records_10:
 
 records_11:
   id: 11
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ11"
@@ -117,7 +117,7 @@ records_11:
 
 records_12:
   id: 12
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ12"
@@ -126,7 +126,7 @@ records_12:
 
 records_13:
   id: 13
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ13"
@@ -135,7 +135,7 @@ records_13:
 
 records_14:
   id: 14
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ14"
@@ -144,7 +144,7 @@ records_14:
 
 records_15:
   id: 15
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ15"
@@ -153,7 +153,7 @@ records_15:
 
 records_16:
   id: 16
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ16"
@@ -162,7 +162,7 @@ records_16:
 
 records_17:
   id: 17
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ17"
@@ -171,7 +171,7 @@ records_17:
 
 records_18:
   id: 18
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ18"
@@ -180,7 +180,7 @@ records_18:
 
 records_19:
   id: 19
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ19"
@@ -189,7 +189,7 @@ records_19:
 
 records_20:
   id: 20
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ20"
@@ -198,7 +198,7 @@ records_20:
 
 records_21:
   id: 21
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ21"
@@ -207,7 +207,7 @@ records_21:
 
 records_22:
   id: 22
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ22"
@@ -216,7 +216,7 @@ records_22:
 
 records_23:
   id: 23
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ23"
@@ -225,7 +225,7 @@ records_23:
 
 records_24:
   id: 24
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ24"
@@ -234,7 +234,7 @@ records_24:
 
 records_25:
   id: 25
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ25"
@@ -243,7 +243,7 @@ records_25:
 
 records_26:
   id: 26
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ26"
@@ -252,7 +252,7 @@ records_26:
 
 records_27:
   id: 27
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ27"
@@ -261,7 +261,7 @@ records_27:
 
 records_28:
   id: 28
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ28"
@@ -270,7 +270,7 @@ records_28:
 
 records_29:
   id: 29
-  payment: 1000
+  money: 1000
   date: 2016-02-01
   card: true
   memo: "サンプルデータ29"
@@ -279,7 +279,7 @@ records_29:
 
 records_30:
   id: 30
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ30"
@@ -288,7 +288,7 @@ records_30:
 
 records_31:
   id: 31
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ31"
@@ -297,7 +297,7 @@ records_31:
 
 records_32:
   id: 32
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ32"
@@ -306,7 +306,7 @@ records_32:
 
 records_33:
   id: 33
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ33"
@@ -315,7 +315,7 @@ records_33:
 
 records_34:
   id: 34
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ34"
@@ -324,7 +324,7 @@ records_34:
 
 records_35:
   id: 35
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ35"
@@ -333,7 +333,7 @@ records_35:
 
 records_36:
   id: 36
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ36"
@@ -342,7 +342,7 @@ records_36:
 
 records_37:
   id: 37
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ37"
@@ -351,7 +351,7 @@ records_37:
 
 records_38:
   id: 38
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ38"
@@ -360,7 +360,7 @@ records_38:
 
 records_39:
   id: 39
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ39"
@@ -369,7 +369,7 @@ records_39:
 
 records_40:
   id: 40
-  payment: 1000
+  money: 1000
   date: 2016-01-02
   card: false
   memo: "サンプルデータ40"
