@@ -1,5 +1,5 @@
 class ConfigsController < ApplicationController
-  before_action :set_salaries, :set_categories
+  before_action :set_categories
 
   def index
   end
@@ -12,9 +12,5 @@ class ConfigsController < ApplicationController
 
   def set_categories
     @categories = Category.where(user_id: current_user.id)
-  end
-
-  def set_salaries
-    @salaries = Salary.where(user_id: current_user.id).order(year: :desc)
   end
 end

@@ -33,7 +33,7 @@ class RecordsController < ApplicationController
     @month = params[:month].to_i
     date = Date.new(@year, @month, 10)
 
-    @records = @user.records.where(date: this_month_range(date)).page(params[:page]).per(10)
+    @records = @user.records.page(params[:page]).per(10)
   end
 
   # GET /records/new
@@ -114,45 +114,21 @@ class RecordsController < ApplicationController
 
   private
 
-  # TODO: summary_controllerと重複
-  def this_month_range(date)
-    @date        = date
-    @salary_date = 10
-
-    from_date...to_date
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user_latest_record
+    @records = @user.records.order(:updated_at).reverse_order.page(params[:page]).per(10)
   end
 
-  def from_date
-    if @date.day >= @salary_date
-      Date.new(@date.year, @date.month, @salary_date)
-    else
-      Date.new(@date.last_month.year, @date.last_month.month, @salary_date)
-    end
+  def set_record
+    @record = Record.find(params[:id])
   end
 
-  def to_date
-    if @date.day >= @salary_date
-      Date.new(@date.next_month.year, @date.next_month.month, @salary_date)
-    else
-      Date.new(@date.year, @date.month, @salary_date)
-    end
+  def set_own_categories
+    # @own_categories = Category.where("user_id = #{current_user.id}")
+    @own_categories = Category._own
   end
-
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user_latest_record
-      @records = @user.records.order(:updated_at).reverse_order.page(params[:page]).per(10)
-    end
-
-    def set_record
-      @record = Record.find(params[:id])
-    end
-
-    def set_own_categories
-      # @own_categories = Category.where("user_id = #{current_user.id}")
-      @own_categories = Category._own
-    end
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def record_params
-      params.require(:record).permit(:payment, :date, :category_id, :card, :memo, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def record_params
+    params.require(:record).permit(:payment, :date, :category_id, :card, :memo, :user_id)
+  end
 end

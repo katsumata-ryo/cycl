@@ -26,7 +26,6 @@ class User < ActiveRecord::Base
   # relation
   has_many :records
   has_many :categories
-  has_many :salaries
 
   after_create :insert_default_records
 
@@ -34,8 +33,5 @@ class User < ActiveRecord::Base
     user_id = self.id
     # categories
     Category.create_first(user_id)
-
-    # salaries
-    Salary.create_first(user_id)
   end
 end

@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   end
   root to: "home#index"
 
-  resources :salaries
 
   resources :records
   get 'records/:year/:month', to: 'records#show'
@@ -13,7 +12,6 @@ Rails.application.routes.draw do
   post 'records/bulk_create', to: 'records#bulk_create'
 
   resources :configs, only: ['index']
-  resources :salaries, only: ['new', 'edit', 'update', 'create', 'destroy']
   resources :categories, only: ['new', 'edit', 'update', 'create', 'destroy']
 
   devise_for :users, controllers: {

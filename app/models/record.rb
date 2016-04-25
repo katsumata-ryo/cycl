@@ -26,16 +26,6 @@ class Record < ActiveRecord::Base
   scope :_month,  lambda { |from, to| where(date: from..to) }
   scope :_card,   lambda { where(card: true) }
 
-  def self.this_month
-    today = Date.today
-    { year: today.year, month: today.month}
-  end
-
-  def this_month_records
-    today = Date.today
-    month_records(today.year, today.month)
-  end
-
   def self.category_sums
     sums = {}
     self.pluck(:category_id).each do |category|
