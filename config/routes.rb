@@ -8,8 +8,6 @@ Rails.application.routes.draw do
 
   resources :records
   get 'records/:year/:month', to: 'records#show'
-  get 'records/bulk/:number', to: 'records#bulk'
-  post 'records/bulk_create', to: 'records#bulk_create'
 
   resources :configs, only: ['index']
   resources :categories, only: ['new', 'edit', 'update', 'create', 'destroy']
