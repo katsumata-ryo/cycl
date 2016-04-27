@@ -25,6 +25,8 @@ class Record < ActiveRecord::Base
 
   scope :_month,  lambda { |from, to| where(date: from..to) }
   scope :_card,   lambda { where(card: true) }
+  scope :_payments, -> { joins(:category).where("category.is_payment = ?", true) }
+  scope :_incomes, -> { joins(:category).where("category.is_payment = ?", false) }
 
   def self.category_sums
     sums = {}

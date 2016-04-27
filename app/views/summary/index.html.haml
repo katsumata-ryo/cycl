@@ -9,7 +9,7 @@
     %th カードの支払
   %tr
     %td.odd
-      = number_to_currency(@sum)
+      = number_to_currency(@payments.sum(:money))
     %td.odd
       = ""
     %td.odd

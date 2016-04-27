@@ -4,14 +4,16 @@ class SummaryController < ApplicationController
   before_action :set_own_categories, :set_records
 
   def index
-    @month_records = @records
-    @sum           = @month_records.sum(:money)
-    @card_sum      = @month_records.where(card: true).sum(:money)
-    @categories    = @user.categories
+    today = Date.today
+    @this_month_records = @records._month(today.beginning_of_month, today.end_of_month)
+    @incomes            = @this_month_records._incomes
+    @payments           = @this_month_records._payments
+    @card_sum           = @this_month_records.where(card: true).sum(:money)
+    @categories         = @user.categories
   end
 
   def show
-    @sum    = @records
+    @sum = @records
   end
 
   private
