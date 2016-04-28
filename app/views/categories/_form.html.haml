@@ -16,14 +16,14 @@
     = f.check_box :monthly
   .field.space-bottom-half
     %strong
-      支払いで使うカテゴリーの場合はチェックボックスを外してください
+      収入はチェックを外してください
     = f.check_box :is_payment, value: true
 
   .field.space-bottom-half
     %strong
       予算袋
     %br
-    = f.number_field :budget
+    = f.number_field :budget, value: 0
   .field.space-bottom-half
     = f.hidden_field :user_id, value: current_user.id
   .actions

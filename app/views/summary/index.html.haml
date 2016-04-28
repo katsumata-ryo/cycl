@@ -13,7 +13,7 @@
     %td.odd
       = number_to_currency(@payments.sum(:money))
     %td.odd
-      = @incomes.sum(:money) - @payments.sum(:money)
+      = number_to_currency(@incomes.sum(:money) - @payments.sum(:money))
     %td.odd
       = number_to_currency(@card_sum)
 
