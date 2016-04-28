@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   end
   root to: "home#index"
 
-
   resources :records
   get 'records/:year/:month', to: 'records#show'
 
