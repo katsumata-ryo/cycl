@@ -1,37 +1,25 @@
 %h1
   = "#{params[:year]}年 #{params[:month]}月"
 
-.dropdown
-  %button#dropdownMenu2.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-    月を選択
-    %span.caret
-  %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu2"}
-    %li
-      = link_to "今月", summary_path
-    %li.divider{:role => "separator"}
-    - today = Date.today
-    - (-4...5).each do |i|
-      - date = today << -i
-      %li
-        = link_to "#{date.year}/#{date.month}", controller: "summary", action: "show", year: date.year, month: date.month
+= render partial: 'summary/move_month_form'
 
 %h2
   総支出
 %p
   ￥
-  = @month_records.sum(:money)
+  = @payments.sum(:money)
 
 %h2
   残額
 %p
   ￥
-  = ""
+  = @incomes.sum(:money) - @payments.sum(:money)
 
 %h2
   クレジットカード
 %p
   ￥
-  = @month_records.where(card: true).sum(:money)
+  = @payments.where(card: true).sum(:money)
 %h2
   カテゴリーごと
 

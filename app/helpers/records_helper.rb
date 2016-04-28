@@ -20,8 +20,8 @@ module RecordsHelper
   end
 
   def this_page?(date)
-    if @month.present?
-      date.month == @month.to_i
+    if params[:month].present?
+      date.month == params[:month].to_i
     else
       date == Date.today
     end
