@@ -11,7 +11,7 @@
     %td.odd
       = number_to_currency(@payments.sum(:money))
     %td.odd
-      = ""
+      = @incomes.sum(:money) - @payments.sum(:money)
     %td.odd
       = number_to_currency(@card_sum)
 
@@ -23,7 +23,7 @@
     %th 支払
     %th 予算差引額
   - @categories.each do |category|
-    - category_sum = @month_records.where(category: category).sum(:money)
+    - category_sum = @this_month_records.where(category: category).sum(:money)
     %tr
       - even_odd = cycle("even", "odd")
       %td{ class: even_odd}
