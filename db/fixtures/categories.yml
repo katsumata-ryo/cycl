@@ -19,6 +19,7 @@ category_1:
   monthly: false
   budget: 20000
   user_id: 1
+  is_payment: true
 
 category_2:
   id: 2
@@ -26,6 +27,7 @@ category_2:
   monthly: false
   budget: 20000
   user_id: 1
+  is_payment: true
 
 category_3:
   id: 3
@@ -33,6 +35,7 @@ category_3:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true
 
 category_4:
   id: 4
@@ -40,6 +43,7 @@ category_4:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true
 
 category_5:
   id: 5
@@ -47,6 +51,7 @@ category_5:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true
 
 category_6:
   id: 6
@@ -54,6 +59,7 @@ category_6:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true
 
 category_7:
   id: 7
@@ -61,6 +67,7 @@ category_7:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true
 
 category_8:
   id: 8
@@ -68,6 +75,7 @@ category_8:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true
 
 category_9:
   id: 9
@@ -75,6 +83,7 @@ category_9:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true
 
 category_10:
   id: 10
@@ -82,6 +91,7 @@ category_10:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true
 
 category_11:
   id: 11
@@ -89,6 +99,7 @@ category_11:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true
 
 category_12:
   id: 12
@@ -96,6 +107,7 @@ category_12:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true
 
 category_13:
   id: 13
@@ -103,6 +115,7 @@ category_13:
   monthly: true
   budget: 3000
   user_id: 1
+  is_payment: true
 
 category_14:
   id: 14
@@ -110,6 +123,7 @@ category_14:
   monthly: true
   budget: 3000
   user_id: 1
+  is_payment: true
 
 category_15:
   id: 15
@@ -117,6 +131,7 @@ category_15:
   monthly: true
   budget: 2000
   user_id: 1
+  is_payment: true
 
 category_16:
   id: 16
@@ -124,6 +139,7 @@ category_16:
   monthly: true
   budget: 4000
   user_id: 1
+  is_payment: true
 
 category_17:
   id: 17
@@ -131,6 +147,7 @@ category_17:
   monthly: true
   budget: 7000
   user_id: 1
+  is_payment: true
 
 category_18:
   id: 18
@@ -138,6 +155,7 @@ category_18:
   monthly: true
   budget: 61000
   user_id: 1
+  is_payment: true
 
 category_19:
   id: 19
@@ -145,6 +163,7 @@ category_19:
   monthly: true
   budget: 20000
   user_id: 1
+  is_payment: true
 
 category_20:
   id: 20
@@ -152,3 +171,4 @@ category_20:
   monthly: false
   budget: 0
   user_id: 1
+  is_payment: true

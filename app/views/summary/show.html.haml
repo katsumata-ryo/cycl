@@ -1,52 +1,37 @@
 %h1
   = "#{params[:year]}年 #{params[:month]}月"
 
-.dropdown
-  %button#dropdownMenu2.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
-    月を選択
-    %span.caret
-  %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu2"}
-    %li
-      = link_to "今月", summary_path
-    %li.divider{:role => "separator"}
-    - today = Date.today
-    - (-4...5).each do |i|
-      - date = today << -i
-      %li
-        = link_to "#{date.year}/#{date.month}", controller: "summary", action: "show", year: date.year, month: date.month
+= render partial: 'summary/move_month_form'
 
-%h2
-  総支出
-%p
-  ￥
-  = @month_records.sum(:payment)
+%h3
+  集計
+%table.table
+  %tr
+    %th 使ったお金
+    %th 残りのお金
+    %th カードの支払
+  %tr
+    %td.odd
+      = number_to_currency(@payments.sum(:money))
+    %td.odd
+      = number_to_currency(@incomes.sum(:money) - @payments.sum(:money))
+    %td.odd
+      = number_to_currency(@card_sum)
 
-%h2
-  残額
-%p
-  ￥
-  = @salary.money - @month_records.sum(:payment)
-
-%h2
-  クレジットカード
-%p
-  ￥
-  = @month_records.where(card: true).sum(:payment)
-%h2
-  カテゴリーごと
-
-%table.table.table-condensed
+%h3
+  カテゴリー別
+%table.table
   %tr
     %th カテゴリー
     %th 支払
     %th 予算差引額
-  - @month_records.pluck(:category_id).uniq.each do |category_id|
+  - @categories.each do |category|
+    - category_sum = @month_records.where(category: category).sum(:money)
     %tr
-      %th
-        = @categories.find_by_id(category_id).name
-      %td
-        ￥
-        = @month_records.where(category_id: category_id).sum(:payment)
-      %td
-        ￥
-        = @categories.find_by_id(category_id).budget - @month_records.where(category_id: category_id).sum(:payment)
+      - even_odd = cycle("even", "odd")
+      %td{ class: even_odd}
+        = category.name
+      %td{ class: even_odd}
+        = number_to_currency(category_sum)
+      %td{ class: even_odd}
+        = number_to_currency(category.budget - category_sum)

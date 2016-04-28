@@ -1,7 +1,6 @@
 = form_for @category do |f|
   - if @category.errors.any?
     #error_explanation
-      //%h2= "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
       %ul
         - @category.errors.full_messages.each do |msg|
           %li= msg
@@ -13,13 +12,18 @@
     = f.text_field :name
   .field.space-bottom-half
     %strong
-      毎月かかるものはチェック
+      毎月のものはチェック
     = f.check_box :monthly
+  .field.space-bottom-half
+    %strong
+      収入はチェックを外してください
+    = f.check_box :is_payment, value: true
+
   .field.space-bottom-half
     %strong
       予算袋
     %br
-    = f.number_field :budget
+    = f.number_field :budget, value: 0
   .field.space-bottom-half
     = f.hidden_field :user_id, value: current_user.id
   .actions

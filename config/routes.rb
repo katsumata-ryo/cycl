@@ -5,17 +5,10 @@ Rails.application.routes.draw do
   end
   root to: "home#index"
 
-  resources :salaries
-
-  resources :records, only: [:index, :new, :edit, :update, :create, :destroy]
-  namespace :records do
-    resources :years, only: [] do
-      resources :months, only: [:show]
-    end
-  end
+  resources :records
+  get 'records/:year/:month', to: 'records#show'
 
   resources :configs, only: ['index']
-  resources :salaries, only: ['new', 'edit', 'update', 'create', 'destroy']
   resources :categories, only: ['new', 'edit', 'update', 'create', 'destroy']
 
   devise_for :users, controllers: {
