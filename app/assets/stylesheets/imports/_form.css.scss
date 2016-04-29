@@ -8,22 +8,22 @@
       tr {
         th {
           width: 150px;
-          height: 20px;
+          height: 30px;
           text-align: left;
           padding-bottom: 10px;
         }
 
         td {
-          width: 200px;
+          width: 215px;
           input {
             @extend .form-reset;
-            width: 200px;
-            height: 20px;
+            width: 215px;
+            height: 30px;
             padding: 5px;
           }
           select {
             @extend .form-reset;
-            height: 20px;
+            height: 30px;
             padding: 5px;
           }
         }
@@ -31,21 +31,21 @@
     }
 
     table.form-memo {
-      float: left;
-
+      width: 100%;
       tr {
         vertical-align: top;
 
         th {
           width: 50px;
+          text-align: left;
         }
         td{
-          width: 250px;
+          width: 100%;
           height: 100px;
 
           textarea {
             @extend .form-reset;
-            width: 250px;
+            width: 100%;
             height: 75px;
           }
         }
