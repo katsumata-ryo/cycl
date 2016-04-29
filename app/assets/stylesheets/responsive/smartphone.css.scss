@@ -106,4 +106,8 @@
   .actions {
     @extend .mTextCenter ;
   }
+
+  select, input{
+    font-size: 16px;
+  }
 }
