@@ -28,6 +28,6 @@ class SummaryController < ApplicationController
   end
 
   def set_own_categories
-    @categories = @user.categories._own
+    @categories = @user.categories
   end
 end
