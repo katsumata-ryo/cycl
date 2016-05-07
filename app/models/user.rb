@@ -26,12 +26,4 @@ class User < ActiveRecord::Base
   # relation
   has_many :records
   has_many :categories
-
-  after_create :insert_default_records
-
-  def insert_default_records
-    user_id = self.id
-    # categories
-    Category.create_first(user_id)
-  end
 end
