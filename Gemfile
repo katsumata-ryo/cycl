@@ -19,6 +19,7 @@ gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'annotate'
 gem 'kaminari'
+gem 'validates_timeliness', '~> 4.0'
 
 group :production do
   gem 'pg'

@@ -19,10 +19,14 @@ require 'rails_helper'
 describe Record do
   fixtures :categories
   fixtures :users
+  fixtures :records
 
   before do
+    @records = Record.all
+
     user = users(:user_01)
     user.save
+
     category = categories(:category_01)
     category.save
 
@@ -48,24 +52,53 @@ describe Record do
   end
 
   # Validations
-
-  # Methods
   describe "test" do
-    context "normal case." do
-      it "not null" do
-        expect(@record.money).not_to be_nil
+    context "normal case" do
+      it "is valid money case" do
+        [0, 1, 10, 100, 1000, 10000].each do |value|
+          @record.money = value
+          expect(@record.save).to be_truthy
+        end
+      end
+
+      it "is valid date case" do
+        ['1986-12-12', '1900-1-1', '2999-12-31'].each do |value|
+          @record.date = value
+          expect(@record.save).to be_truthy
+        end
       end
 
       it "card is require boolean" do
         expect(@record.card).to match(true).or match(false)
         expect(@record.save).to be_truthy
       end
+
+      it "is valid category_id value" do
+        ['1', '2', '4', '100'].each do |value|
+          @record.category_id = value
+          expect(@record.save).to be_truthy
+        end
+      end
+
+      it "is valid user_id value" do
+        ['1', '2', '4', '100'].each do |value|
+          @record.user_id = value
+          expect(@record.save).to be_truthy
+        end
+      end
     end
 
     context "error case." do
       it "is invalid money value" do
-        ["test", nil].each do |value|
+        ["test", nil, 0.1, -1, -10].each do |value|
           @record.money = value
+          expect(@record.save).to be_falsey
+        end
+      end
+
+      it "is invalid date value" do
+        ["test", nil, '2016-8-32', '2015-1-0'].each do |value|
+          @record.date = value
           expect(@record.save).to be_falsey
         end
       end
@@ -74,6 +107,50 @@ describe Record do
         @record.category = nil
         expect(@record.save).to be_falsey
       end
+    end
+  end
+
+  # Scope
+  describe 'Scopes' do
+    context '_month' do
+      it 'return Junuary Objects' do
+        date = Date.parse('2016-01-01')
+        records =  @records._month(date, date.end_of_month)
+        expect(records.length).to eq(20)
+      end
+    end
+
+    context '_card' do
+      it 'return using card objects' do
+        records = @records._card
+        expect(records.length).to eq(20)
+      end
+    end
+
+    context '_payments' do
+      it 'return using payments objects' do
+        records = @records._payments
+        expect(records.length).to eq(41)
+      end
+    end
+
+    context '_incomes' do
+      it 'return using incomes objects' do
+        records = @records._incomes
+        expect(records.length).to eq(0)
+      end
+    end
+  end
+
+  # Methods
+  describe 'methods' do
+    it 'is matched sum for category_sums methods.' do
+      @sums = @records.category_sums
+      expect(@sums[0][1]).to eq(2000)
+    end
+
+    it 'is returned array object' do
+      expect(@records.category_sums.class).to eq(Array)
     end
   end
 end
