@@ -15,6 +15,7 @@ require 'rails_helper'
 
 describe Category do
   fixtures :categories
+  fixtures :users
 
   before do
     category = categories(:category_01)
