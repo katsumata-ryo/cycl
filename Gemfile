@@ -30,6 +30,7 @@ group :test do
   gem "rspec"
   gem "rspec-rails"
   gem "rspec_junit_formatter", '0.2.2'
+  gem "capybara"
   gem 'simplecov', require: false
 end
 
