@@ -68,19 +68,19 @@ describe Record do
         end
       end
 
-      it "card is require boolean" do
+      it "is require boolean for card" do
         expect(@record.card).to match(true).or match(false)
         expect(@record.save).to be_truthy
       end
 
-      it "is valid category_id value" do
+      it "is valid for category_id " do
         ['1', '2', '4', '100'].each do |value|
           @record.category_id = value
           expect(@record.save).to be_truthy
         end
       end
 
-      it "is valid user_id value" do
+      it "is valid for user_id value" do
         ['1', '2', '4', '100'].each do |value|
           @record.user_id = value
           expect(@record.save).to be_truthy
@@ -103,7 +103,7 @@ describe Record do
         end
       end
 
-      it "empty category value is invalid" do
+      it "is empty category value is invalid" do
         @record.category = nil
         expect(@record.save).to be_falsey
       end
