@@ -11,7 +11,6 @@
 #  updated_at  :datetime         not null
 #  category_id :integer
 #  user_id     :integer
-#
 
 require 'rails_helper'
 
