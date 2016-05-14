@@ -24,8 +24,7 @@ class Record < ActiveRecord::Base
   validates_inclusion_of :card, in: [true, false]
   validates_date :date
 
-  # Scopes
-  scope :_month,  lambda { |from, to| where(date: from..to) }
+  scope :_month,  lambda { |month| where(date: month..month.end_of_month) }
   scope :_card,   lambda { where(card: true) }
   scope :_payments, -> { joins(:category).where(categories: { is_payment: true}) }
   scope :_incomes, -> { joins(:category).where(categories: { is_payment: false}) }
