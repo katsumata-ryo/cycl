@@ -3,7 +3,7 @@
 # Table name: records
 #
 #  id          :integer          not null, primary key
-#  payment     :integer
+#  money    :integer
 #  date        :date
 #  card        :boolean
 #  memo        :text
@@ -14,15 +14,17 @@
 #
 
 class Record < ActiveRecord::Base
-  # relation
+  # Relations
   belongs_to :category
   belongs_to :user
 
-  # validation
-  validates_presence_of :money, :category_id
-  validates_numericality_of :money
-  validates :card, inclusion: { in: [true, false] }
+  # Validations
+  validates_presence_of :money, :category_id, :user_id
+  validates_numericality_of :money, only_integer: true, greater_than_or_equal_to: 0
+  validates_inclusion_of :card, in: [true, false]
+  validates_date :date
 
+  # Scopes
   scope :_month,  lambda { |from, to| where(date: from..to) }
   scope :_card,   lambda { where(card: true) }
   scope :_payments, -> { joins(:category).where(categories: { is_payment: true}) }

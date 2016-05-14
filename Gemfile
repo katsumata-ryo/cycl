@@ -19,6 +19,7 @@ gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
 gem 'annotate'
 gem 'kaminari'
+gem 'validates_timeliness', '~> 4.0'
 
 group :production do
   gem 'pg'
@@ -29,6 +30,8 @@ group :test do
   gem "rspec"
   gem "rspec-rails"
   gem "rspec_junit_formatter", '0.2.2'
+  gem "capybara"
+  gem 'simplecov', require: false
 end
 
 group :development, :test do

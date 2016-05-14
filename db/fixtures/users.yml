@@ -24,17 +24,17 @@
 # below each fixture, per the syntax in the comments below
 #
 
-user_1:
+user_01:
   id: 1
   email: "ktmt.ryo@gmail.com"
   encrypted_password: "$2a$10$OgmFDX0wXHLlyAvkoaQjXOox3z26G2J1SSSB7.tfU3tCBf23hZ.Pe"
 
-user_2:
+user_02:
   id: 2
   email: "yuumifuruta@gmail.com"
   encrypted_password: "$2a$10$OgmFDX0wXHLlyAvkoaQjXOox3z26G2J1SSSB7.tfU3tCBf23hZ.Pe"
 
-user_3:
+user_03:
   id: 3
   email: "user@example.com"
   encrypted_password: "$2a$10$OgmFDX0wXHLlyAvkoaQjXOox3z26G2J1SSSB7.tfU3tCBf23hZ.Pe"

@@ -81,7 +81,7 @@ class RecordsController < ApplicationController
   end
 
   def set_own_categories
-    @own_categories = Category._own
+    @own_categories = @user.categories
   end
 
   def record_params
