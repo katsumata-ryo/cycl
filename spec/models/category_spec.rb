@@ -38,14 +38,14 @@ describe Category do
   describe 'Validations' do
     context 'normal case' do
       it "can save" do
-        expect(@category.save).to be_truthy
+        expect(@category).to be_valid
       end
 
       it "can save normal name value" do
         values = ["食費", "eating", "10000"]
         values.each do |value|
           @category.name = value
-          expect(@category.save).to be_truthy
+          expect(@category).to be_valid
         end
       end
 
@@ -53,7 +53,7 @@ describe Category do
         values = [true, false]
         values.each do |value|
           @category.monthly = value
-          expect(@category.save).to be_truthy
+          expect(@category).to be_valid
         end
       end
 
@@ -61,7 +61,7 @@ describe Category do
         values = [0, 1, 10000, 100000000]
         values.each do |value|
           @category.budget = value
-          expect(@category.save).to be_truthy
+          expect(@category).to be_valid
         end
       end
 
@@ -69,7 +69,7 @@ describe Category do
         values = [1, 10, 100, 1000]
         values.each do |value|
           @category.user_id = value
-          expect(@category.save).to be_truthy
+          expect(@category).to be_valid
         end
       end
     end
@@ -79,7 +79,7 @@ describe Category do
         values = [nil, ""]
         values.each do |value|
           @category.name = value
-          expect(@category.save).to be_falsey
+          expect(@category).not_to be_valid
         end
       end
 
@@ -87,7 +87,7 @@ describe Category do
         values = [nil, ""]
         values.each do |value|
           @category.monthly = value
-          expect(@category.save).to be_falsey
+          expect(@category).not_to be_valid
         end
       end
 
@@ -95,7 +95,7 @@ describe Category do
         values = [nil, true, "string", "", 1.08, -1]
         values.each do |value|
           @category.budget = value
-          expect(@category.save).to be_falsey
+          expect(@category).not_to be_valid
         end
       end
     end
