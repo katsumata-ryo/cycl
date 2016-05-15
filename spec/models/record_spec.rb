@@ -114,7 +114,7 @@ describe Record do
     context '_month' do
       it 'return Junuary Objects' do
         date = Date.parse('2016-01-01')
-        records =  @records._month(date, date.end_of_month)
+        records =  @records._month(date)
         expect(records.length).to eq(20)
       end
     end
