@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/show'
   get 'summary', to: 'summary#index'
-  get 'summary/:year/:month', to: 'summary#show'
+  get 'summary/:year/:month', to: 'summary/months#show'
 end
