@@ -1,5 +1,7 @@
 require 'simplecov'
 require 'rspec/request_describer'
+require 'devise'
+include Warden::Test::Helpers
 
 SimpleCov.start
 
@@ -13,5 +15,6 @@ RSpec.configure do |config|
   end
 
   config.include RSpec::RequestDescriber , type: :request
+  config.include Devise::TestHelpers, type: :requests
   # config.include Capybara::DSL
 end
