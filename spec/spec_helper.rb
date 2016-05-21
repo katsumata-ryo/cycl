@@ -10,5 +10,6 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  config.include RSpec::RequestDescriber , type: :request
   # config.include Capybara::DSL
 end
