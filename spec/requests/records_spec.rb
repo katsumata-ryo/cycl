@@ -14,7 +14,6 @@ describe 'RecordsRouting' do
 
   context 'login user' do
     login_user(User.first)
-
     it 'works(records#index page)' do
       get records_path
       expect(response.status).to eq(200)

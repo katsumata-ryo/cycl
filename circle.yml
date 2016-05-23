@@ -43,21 +43,16 @@ machine:
 #     - "~/custom_2" # relative to the user's home directory
 
 # ## Customize database setup
-# database:
-#   override:
-#     # replace CircleCI's generated database.yml
-#     - cp config/database.yml.ci config/database.yml
-#     - bundle exec rake db:create db:schema:load
+database:
+  override:
+    # replace CircleCI's generated database.yml
+    - bundle exec rake db:create db:schema:load
+    - bundle exec rake db:seed
 
 # ## Customize test commands
 # test:
 #   override:
-#     - phpunit test/unit-tests # use PHPunit for testing
-#   post:
-#     - bundle exec rake jasmine:ci: # add an extra test type
-#         environment:
-#           RAILS_ENV: test
-#           RACK_ENV: test
+#     - bundle exec rake
 
 # ## Customize deployment commands
 # deployment:
