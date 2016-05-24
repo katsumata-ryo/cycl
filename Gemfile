@@ -28,8 +28,9 @@ end
 
 group :test do
   gem "rspec"
-  gem "rspec-rails"
   gem "rspec_junit_formatter", '0.2.2'
+  gem "rspec-rails"
+  gem "rspec-request_describer"
   gem "capybara"
   gem 'simplecov', require: false
 end
@@ -40,6 +41,7 @@ group :development, :test do
   gem 'pry-doc'    # methodを表示
   gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
   gem 'pry-stack_explorer' # スタックをたどれる
+  gem 'simple_seed'
 end
 
 group :development do
@@ -47,6 +49,4 @@ group :development do
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'simple_seed'
 end
-
