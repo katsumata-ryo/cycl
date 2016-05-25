@@ -20,6 +20,7 @@ gem 'bootstrap3-datetimepicker-rails'
 gem 'annotate'
 gem 'kaminari'
 gem 'validates_timeliness', '~> 4.0'
+gem 'puma'
 
 group :production do
   gem 'pg'
